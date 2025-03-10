@@ -1098,6 +1098,8 @@ character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
    end,
 })
 
+local Divider = TabC:CreateDivider()
+
 local Label = TabC:CreateLabel("Script Make By 54hz(Ngoc Mai)", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
 local Label = TabC:CreateLabel("Discord:https://discord.gg/NtakBUPbkW", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
