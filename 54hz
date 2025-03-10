@@ -1098,8 +1098,8 @@ character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
    end,
 })
 
-local Label = Tab:CreateLabel("Script Make By 54hz(Ngoc Mai)", 4483362458, Color3.fromRGB(255, 255, 255), false) -- Title, Icon, Color, IgnoreTheme
+local Label = TabC:CreateLabel("Script Make By 54hz(Ngoc Mai)", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
-local Tab = Window:CreateTab("Discord:https://discord.gg/NtakBUPbkW", 4483362458) -- Title, Image
+local Label = TabC:CreateLabel("Discord:https://discord.gg/NtakBUPbkW", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
 
-local Tab = Window:CreateTab("Youtube:https://youtube.com/@mylinhhuynhthi-si9rs?si=B51GqQe384d28VZ9", 4483362458) -- Title, Image
+local Label = TabC:CreateLabel("Youtube:https://youtube.com/@mylinhhuynhthi-si9rs?si=B51GqQe384d28VZ9", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
