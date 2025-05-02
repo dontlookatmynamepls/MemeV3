@@ -1353,3 +1353,20 @@ local Button = Tab:CreateButton({
 		character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
 	end
 })
+
+local Tab = Window:CreateTab({
+	Name = "Credits",
+	Icon = "description",
+	ImageSource = "Material",
+	ShowTitle = true -- This will determine whether the big header text in the tab will show
+})
+
+local Label = Tab:CreateLabel({
+	Text = "script make by 54hz",
+	Style = 2 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
+
+local Label = Tab:CreateLabel({
+	Text = "discord nhm_roblox,link https://discord.gg/pba3uuxeeg",
+	Style = 2 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
