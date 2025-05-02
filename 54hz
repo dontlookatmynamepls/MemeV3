@@ -6,107 +6,208 @@ else
     player:Kick("buy script discord:nhm_roblox")
 end
 
-local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/main/source.lua", true))()
 
-local Window = Rayfield:CreateWindow({
-   Name = "Meme Adventure || Flandre Hub Premium",
-   Icon = 125307995960610, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
-   LoadingTitle = "Welcome to Flandre Hub",
-   LoadingSubtitle = "Best Meme Adventure Script",
-   Theme = "Bloom", -- Check https://docs.sirius.menu/rayfield/configuration/themes
+local Window = Luna:CreateWindow({
+	Name = "Flandre Hub", -- This Is Title Of Your Window
+	Subtitle = "Meme Adventure", -- A Gray Subtitle next To the main title.
+	LogoID = "82795327169782", -- The Asset ID of your logo. Set to nil if you do not have a logo for Luna to use.
+	LoadingEnabled = true, -- Whether to enable the loading animation. Set to false if you do not want the loading screen or have your own custom one.
+	LoadingTitle = "Welcome To Flandre Hub", -- Header for loading screen
+	LoadingSubtitle = "Best Meme Adventure Script", -- Subtitle for loading screen
 
-   DisableRayfieldPrompts = false,
-   DisableBuildWarnings = false, -- Prevents Rayfield from warning when the script has a version mismatch with the interface
+	ConfigSettings = {
+		RootFolder = nil, -- The Root Folder Is Only If You Have A Hub With Multiple Game Scripts and u may remove it. DO NOT ADD A SLASH
+		ConfigFolder = "Big Hub" -- The Name Of The Folder Where Luna Will Store Configs For This Script. DO NOT ADD A SLASH
+	},
 
-   ConfigurationSaving = {
-      Enabled = true,
-      FolderName = nil, -- Create a custom folder for your hub/game
-      FileName = "flandrehub"
-   },
-
-   Discord = {
-      Enabled = false, -- Prompt the user to join your Discord server if their executor supports it
-      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
-      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
-   },
-
-   KeySystem = true, -- Set this to true to use our key system
-   KeySettings = {
-      Title = "Flandre Hub",
-      Subtitle = "Key Stytems",
-      Note = "to get key,chat to my bot in discord :nhm_roblox", -- Use this to tell the user how to get a key
-      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
-      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
-      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = {"b8d83ed2e0bbf2e4f45aa3c0166816dc"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
-   }
+	KeySystem = false, -- As Of Beta 6, Luna Has officially Implemented A Key System!
+	KeySettings = {
+		Title = "Luna Example Key",
+		Subtitle = "Key System",
+		Note = "Best Key System Ever! Also, Please Use A HWID Keysystem like Pelican, Luarmor etc. that provide key strings based on your HWID since putting a simple string is very easy to bypass",
+		SaveInRoot = false, -- Enabling will save the key in your RootFolder (YOU MUST HAVE ONE BEFORE ENABLING THIS OPTION)
+		SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+		Key = {"Example Key"}, -- List of keys that will be accepted by the system, please use a system like Pelican or Luarmor that provide key strings based on your HWID since putting a simple string is very easy to bypass
+		SecondAction = {
+			Enabled = true, -- Set to false if you do not want a second action,
+			Type = "Link", -- Link / Discord.
+			Parameter = "" -- If Type is Discord, then put your invite link (DO NOT PUT DISCORD.GG/). Else, put the full link of your key system here.
+		}
+	}
 })
 
-Rayfield:Notify({
-   Title = "thanks for buy script",
-   Content = "discord:https://discord.gg/NtakBUPbkW",
-   Duration = 6.5,
-   Image = 4483362458,
+Luna:Notification({ 
+	Title = "54hz Is Happy Today👽",
+	Icon = "notifications_active",
+	ImageSource = "Material",
+	Content = "thank for use my script,pls dont dead"
 })
 
-local Tab = Window:CreateTab("Main", 4483362458) -- Title, Image
-local TabAuto = Window:CreateTab("Auto", 4483362458) -- Title, Image
-local TabOther = Window:CreateTab("Others", 4483362458) -- Title, Image
-local TabNC = Window:CreateTab("No Cooldown", 4483362458) -- Title, Image
-local TabM = Window:CreateTab("Misc", 4483362458) -- Title, Image
-local TabTP = Window:CreateTab("Teleports", 4483362458) -- Title, Image
-local TabC = Window:CreateTab("Credits", 4483362458) -- Title, Image
+local Tab = Window:CreateTab({
+	Name = "Updates",
+	Icon = "list",
+	ImageSource = "Material",
+	ShowTitle = true -- This will determine whether the big header text in the tab will show
+})
 
-local Divider = Tab:CreateDivider()
+Tab:CreateSection("Flandre Hub Update V4.6")
+
+local Label = Tab:CreateLabel({
+	Text = "+ Fixed Teleport Wrong Location",
+	Style = 2 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
+
+local Label = Tab:CreateLabel({
+	Text = "+ Fixed Visual Tab",
+	Style = 2 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
+
+local Label = Tab:CreateLabel({
+	Text = "+ Added Equip All Helmet And Armor(REALL)",
+	Style = 2 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
+
+Tab:CreateSection("Flandre Hub Update V4.55")
+
+local Label = Tab:CreateLabel({
+	Text = "New Ui Library(Luna)",
+	Style = 1 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
+
+local Label = Tab:CreateLabel({
+	Text = "+ Added Visual Tab",
+	Style = 2 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
+
+Tab:CreateSection("Flandre Hub Update V4.5")
+
+local Label = Tab:CreateLabel({
+	Text = "+ Added Spam Cursed Monster",
+	Style = 2 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
+
+local Label = Tab:CreateLabel({
+	Text = " + Added Auto Pray",
+	Style = 2 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
+
+local Label = Tab:CreateLabel({
+	Text = "Auto Fishing Fixed",
+	Style = 1 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
+
+Tab:CreateSection("Flandre Hub Update V4.4")
+
+local Label = Tab:CreateLabel({
+	Text = "Auto Pray Added Soon...",
+	Style = 1 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
+
+local Label = Tab:CreateLabel({
+	Text = "Added Spam Mahogara",
+	Style = 2 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
+
+local Label = Tab:CreateLabel({
+	Text = "Auto Fishing Remove Because Bug",
+	Style = 3 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
+
+local Tab = Window:CreateTab({
+	Name = "Universal Script",
+	Icon = "code",
+	ImageSource = "Material",
+	ShowTitle = true -- This will determine whether the big header text in the tab will show
+})
 
 local Button = Tab:CreateButton({
-   Name = "Infinite Yield",
-   Callback = function()
+	Name = "Infinite Yield",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
- --Name
-   -- The function that takes place when the button is pressed
-   end,
+         -- The function that takes place when the button is pressed
+    	end
 })
 
 local Button = Tab:CreateButton({
-   Name = "Nameless Admin",
-   Callback = function()
+	Name = "Nameless Admin",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))()
- --Name
-   -- The function that takes place when the button is pressed
-   end,
+         -- The function that takes place when the button is pressed
+    	end
 })
 
 local Button = Tab:CreateButton({
-   Name = "Fly V3",
-   Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/huynhthingocmai/FlyV3/refs/heads/main/Moonsecv3"))() --Name
-   -- The function that takes place when the button is pressed
-   end,
+	Name = "Fly V3",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/huynhthingocmai/FlyV3/refs/heads/main/Moonsecv3"))()
+         -- The function that takes place when the button is pressed
+    	end
 })
 
 local Button = Tab:CreateButton({
-   Name = "Key Broad",
-   Callback = function()
+	Name = "Key Broad",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Xxtan31/Ata/main/deltakeyboardcrack.txt", true))()
- --Name
-   -- The function that takes place when the button is pressed
-   end,
+         -- The function that takes place when the button is pressed
+    	end
 })
 
 local Button = Tab:CreateButton({
-   Name = "Teleport Player",
-   Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Infinity2346/Tect-Menu/main/Teleport%20Gui.lua'))() --Name
-   -- The function that takes place when the button is pressed
-   end,
+	Name = "Player Teleport",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Infinity2346/Tect-Menu/main/Teleport%20Gui.lua'))()
+         -- The function that takes place when the button is pressed
+    	end
 })
 
-local Divider = Tab:CreateDivider()
+local Tab = Window:CreateTab({
+	Name = "Main",
+	Icon = "house",
+	ImageSource = "Material",
+	ShowTitle = true -- This will determine whether the big header text in the tab will show
+})
+
+Tab:CreateSection("Normal Features")
+
+local Toggle = Tab:CreateToggle({
+	Name = "Kill Aura",
+	Description = nil,
+	CurrentValue = false,
+    	Callback = function(Value)
+getgenv().G = Value
+getgenv().Creator = 'https://discord.gg/B3HqPPzFYr - HalloweenGaster'
+
+spawn(function()
+    while getgenv().G and getgenv().Creator == 'https://discord.gg/B3HqPPzFYr - HalloweenGaster' do
+        wait(1)
+        sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 112412400000)
+        sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 112412400000)
+        
+        for _, d in pairs(game.Workspace:GetDescendants()) do
+            if d:IsA("Humanoid") then
+                local plr = game.Players:GetPlayerFromCharacter(d.Parent)
+                if not plr then  -- Nếu không phải nhân vật của người chơi thì áp dụng kill aura
+                    d.Health = 0
+                end
+            end
+        end
+    end
+end)
+       	 -- The function that takes place when the toggle is switched
+       	 -- The variable (Value) is a boolean on whether the toggle is true or false
+    	end
+}, "Toggle") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 
 local Button = Tab:CreateButton({
-   Name = "Equip Helmet",
-   Callback = function()
+	Name = "Equip All Helmet(idk)",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
 while wait() do
     local remote = game:GetService("ReplicatedStorage").OtherThing.Tools
 
@@ -132,45 +233,142 @@ while wait() do
     else
         warn("Không tìm thấy RemoteEvent hoặc FireServer không tồn tại!")
     end
-end --Name
-   -- The function that takes place when the button is pressed
-   end,
+end
+         -- The function that takes place when the button is pressed
+    	end
 })
 
-local Divider = Tab:CreateDivider()
+local Button = Tab:CreateButton({
+	Name = "All Helmet(1)",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
 
-local Toggle = Tab:CreateToggle({
-   Name = "Kill Aura",
-   CurrentValue = false,
-   Flag = "ToggleKill", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-getgenv().G = Value
-getgenv().Creator = 'https://discord.gg/B3HqPPzFYr - HalloweenGaster'
+local player = Players.LocalPlayer
+local invData = player:WaitForChild("InvData")
 
-spawn(function()
-    while getgenv().G and getgenv().Creator == 'https://discord.gg/B3HqPPzFYr - HalloweenGaster' do
-        wait(1)
-        sethiddenproperty(game.Players.LocalPlayer, "SimulationRadius", 112412400000)
-        sethiddenproperty(game.Players.LocalPlayer, "MaxSimulationRadius", 112412400000)
-        
-        for _, d in pairs(game.Workspace:GetDescendants()) do
-            if d:IsA("Humanoid") then
-                local plr = game.Players:GetPlayerFromCharacter(d.Parent)
-                if not plr then  -- Nếu không phải nhân vật của người chơi thì áp dụng kill aura
-                    d.Health = 0
-                end
+-- Các từ khóa cần kiểm tra trong tên
+local allowedKeywords = { "Helmet", "Head", "Orb" }
+
+for _, item in pairs(invData:GetChildren()) do
+    if item:IsA("IntValue") then
+        for _, keyword in ipairs(allowedKeywords) do
+            if string.find(item.Name, keyword) then
+                -- Gửi tên item và loại Armor
+                ReplicatedStorage.OtherThing.Tools:FireServer(item.Name, "Armor")
+                break -- Thoát khỏi vòng lặp từ khóa nếu đã khớp
             end
         end
     end
-end)
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-   end,
+end
+
+         -- The function that takes place when the button is pressed
+    	end
 })
 
-local Divider = Tab:CreateDivider()
+local Button = Tab:CreateButton({
+	Name = "All Armor(1)",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Players = game:GetService("Players")
 
--- Fishing Auto Toggle
+local player = Players.LocalPlayer
+local invData = player:WaitForChild("InvData")
+
+for _, item in pairs(invData:GetChildren()) do
+    if item:IsA("IntValue") then
+        local name = item.Name
+
+        -- Kiểm tra nếu tên chứa "Shirt" hoặc "Armor"
+        local containsKeyword = string.find(name, "Shirt") or string.find(name, "Armor")
+        
+        -- Kiểm tra nếu tên kết thúc bằng "Helmet"
+        local endsWithHelmet = name:sub(-6) == "Helmet"
+
+        if containsKeyword or endsWithHelmet then
+            ReplicatedStorage.OtherThing.Tools:FireServer(name, "Helmet")
+        end
+    end
+end
+
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "All Helmet(inf)",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+spawn(function()
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local Players = game:GetService("Players")
+    local player = Players.LocalPlayer
+    local invData = player:WaitForChild("InvData")
+
+    -- Các từ khóa cần kiểm tra trong tên
+    local allowedKeywords = { "Helmet", "Head", "Orb" }
+
+    while true do
+        for _, item in pairs(invData:GetChildren()) do
+            if item:IsA("IntValue") then
+                for _, keyword in ipairs(allowedKeywords) do
+                    if string.find(item.Name, keyword) then
+                        -- Gửi tên item và loại Armor
+                        ReplicatedStorage.OtherThing.Tools:FireServer(item.Name, "Armor")
+                        break -- Thoát khỏi vòng lặp từ khóa nếu đã khớp
+                    end
+                end
+            end
+        end
+        task.wait() -- Giữ cooldown 0 giây giữa các lần lặp
+    end
+end)
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "All Armor(inf)",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+spawn(function()
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local Players = game:GetService("Players")
+    local player = Players.LocalPlayer
+    local invData = player:WaitForChild("InvData")
+
+    while true do
+        for _, item in pairs(invData:GetChildren()) do
+            if item:IsA("IntValue") then
+                local name = item.Name
+
+                -- Kiểm tra nếu tên chứa "Shirt" hoặc "Armor"
+                local containsKeyword = string.find(name, "Shirt") or string.find(name, "Armor")
+                
+                -- Kiểm tra nếu tên kết thúc bằng "Helmet"
+                local endsWithHelmet = name:sub(-6) == "Helmet"
+
+                if containsKeyword or endsWithHelmet then
+                    ReplicatedStorage.OtherThing.Tools:FireServer(name, "Helmet")
+                end
+            end
+        end
+        task.wait() -- Giữ cooldown 0 giây giữa các lần lặp
+    end
+end)
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+Tab:CreateSection("Auto Freatures")
+
+local Label = Tab:CreateLabel({
+	Text = "All Fishing Zone Need Fishing Rod And Lv 200",
+	Style = 1 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
+
 local function startFishing(fishType, stateVar)
     getgenv()[stateVar] = not getgenv()[stateVar]
 
@@ -195,48 +393,42 @@ local function startFishing(fishType, stateVar)
 end
 
 local Toggle = Tab:CreateToggle({
-   Name = "Fishing Desert(Level 200,Fishing Rod)",
-   CurrentValue = false,
-   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-    startFishing("Desert", "fishingEnabled1") -- Toggle,Def,callback
-    print(value)
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-   end,
-})
+	Name = "Fishing Desert",
+	Description = nil,
+	CurrentValue = false,
+    	Callback = function(Value)
+startFishing("Desert", "fishingEnabled1") -- Toggle,Def,callback
+       	 -- The function that takes place when the toggle is switched
+       	 -- The variable (Value) is a boolean on whether the toggle is true or false
+    	end
+}, "Toggle") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 
 local Toggle = Tab:CreateToggle({
-   Name = "Fishing Lava(Level 200,Fishing Rod)",
-   CurrentValue = false,
-   Flag = "Toggle2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-    startFishing("Lava", "fishingEnabled2") -- Toggle,Def,callback
-    print(value)
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-   end,
-})
+	Name = "Fishing Lava",
+	Description = nil,
+	CurrentValue = false,
+    	Callback = function(Value)
+startFishing("Lava", "fishingEnabled2") -- Toggle,Def,callback
+       	 -- The function that takes place when the toggle is switched
+       	 -- The variable (Value) is a boolean on whether the toggle is true or false
+    	end
+}, "Toggle") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 
 local Toggle = Tab:CreateToggle({
-   Name = "Fishing Snow(Level 200,Fishing Rod)",
-   CurrentValue = false,
-   Flag = "Toggle3", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-    startFishing("Snow", "fishingEnabled3") -- Toggle,Def,callback
-    print(value)
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-   end,
-})
+	Name = "Fishing Snow",
+	Description = nil,
+	CurrentValue = false,
+    	Callback = function(Value)
+startFishing("Snow", "fishingEnabled3") -- Toggle,Def,callback
+       	 -- The function that takes place when the toggle is switched
+       	 -- The variable (Value) is a boolean on whether the toggle is true or false
+    	end
+}, "Toggle") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 
-local Divider = TabAuto:CreateDivider()
-
-local Label = TabAuto:CreateLabel("Materials", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
-
-local Button = TabAuto:CreateButton({
-   Name = "Auto Rock Chest(Level 700)",
-   Callback = function()
+local Button = Tab:CreateButton({
+	Name = "Auto Rock Chest(Lv 700)",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
@@ -310,18 +502,16 @@ for _, position in ipairs(positions) do
     wait(0.1) -- Đợi để nhân vật ổn định
     triggerPrompt() -- Kiểm tra và kích hoạt ProximityPrompt nếu có
     wait(delayTime)
-end --Name
-   -- The function that takes place when the button is pressed
-   end,
+end
+         -- The function that takes place when the button is pressed
+    	end
 })
 
-local Toggle = TabAuto:CreateToggle({
-   Name = "Auto Praying(Level 1100)",
-   CurrentValue = false,
-   Flag = "Toggle4", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
--- by Duy Dz
-
+local Toggle = Tab:CreateToggle({
+	Name = "Auto Pray(Lv 1200)",
+	Description = nil,
+	CurrentValue = false,
+    	Callback = function(Value)
 getgenv().AutoPray = Value -- Đổi thành false để tắt script
 
 local v = game:GetService("VirtualInputManager")
@@ -356,18 +546,16 @@ task.spawn(function()
         end
     end
 end)
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-   end,
-})
+       	 -- The function that takes place when the toggle is switched
+       	 -- The variable (Value) is a boolean on whether the toggle is true or false
+    	end
+}, "Toggle") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 
-local Label = TabAuto:CreateLabel("Boss", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
-
-local Toggle = TabAuto:CreateToggle({
-   Name = "Auto Cabybara(Level 200)",
-   CurrentValue = false,
-   Flag = "Toggle6", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
+local Toggle = Tab:CreateToggle({
+	Name = "Auto Cabybara(Lv 200,Secret Grass)",
+	Description = nil,
+	CurrentValue = false,
+    	Callback = function(Value)
 getgenv().G = Value
 getgenv().Creator = 'https://discord.gg/B3HqPPzFYr - HalloweenGaster'
 
@@ -392,17 +580,17 @@ spawn(function()
         end
         wait(1) -- Dừng 1 giây giữa mỗi lần dịch chuyển
     end
-end) -- Toggle,Def,callback
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-   end,
-})
+end)
+       	 -- The function that takes place when the toggle is switched
+       	 -- The variable (Value) is a boolean on whether the toggle is true or false
+    	end
+}, "Toggle") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 
-local Toggle = TabAuto:CreateToggle({
-   Name = "Auto Mahogara(Level 1200,Kill Aura,Summon Treasure Weapon)",
-   CurrentValue = false,
-   Flag = "Toggle7", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
+local Toggle = Tab:CreateToggle({
+	Name = "Auto Mahogara(Summon Treasure Item,No Cd,Lv 1200 And Kill Aura)",
+	Description = nil,
+	CurrentValue = false,
+    	Callback = function(Value)
 getgenv().autoEquip = Value
     local toolName = "Summon The Treasure"
     local player = game.Players.LocalPlayer
@@ -440,89 +628,17 @@ getgenv().autoEquip = Value
         
         -- Đợi 50 giây trước khi tiếp tục lặp
         task.wait(50)
-    end -- Toggle,Def,callback
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-   end,
-})
-
-local Divider = TabOther:CreateDivider()
-
-local Toggle = TabOther:CreateToggle({
-   Name = "Auto Proximity Prompt",
-   CurrentValue = false,
-   Flag = "Toggle9", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-getgenv().AutoProximity = Value
-
-    spawn(function()
-        while getgenv().AutoProximity do
-            local prompt = nil
-            pcall(function()
-                local player = game.Players.LocalPlayer
-                local character = player.Character
-                if character and character.PrimaryPart then
-                    local shortestDistance = math.huge
-                    for _, p in pairs(workspace:GetDescendants()) do
-                        if p:IsA("ProximityPrompt") and p.Enabled then
-                            local distance = (character.PrimaryPart.Position - p.Parent.Position).Magnitude
-                            if distance < shortestDistance then
-                                prompt = p
-                                shortestDistance = distance
-                            end
-                        end
-                    end
-                end
-            end)
-
-            if prompt then
-                fireproximityprompt(prompt)
-            end
-            wait(0.1)
-        end
-    end) -- Toggle,Def,callback
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-   end,
-})
-
-local Button = TabOther:CreateButton({
-   Name = "Instant Proximity Prompt",
-   Callback = function()
-local function updatePrompt(prompt)
-    if prompt:IsA("ProximityPrompt") then
-        prompt.HoldDuration = 0
     end
-end
+       	 -- The function that takes place when the toggle is switched
+       	 -- The variable (Value) is a boolean on whether the toggle is true or false
+    	end
+}, "Toggle") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 
--- Cập nhật tất cả Prompt hiện có
-for _, obj in pairs(game:GetDescendants()) do
-    updatePrompt(obj)
-end
-
--- Khi có Prompt mới xuất hiện, tự động chỉnh
-game.DescendantAdded:Connect(updatePrompt)
-
--- Cứ mỗi 1 phút kiểm tra lại để đảm bảo không bị bỏ sót
-task.spawn(function()
-    while true do
-        for _, obj in pairs(game:GetDescendants()) do
-            updatePrompt(obj)
-        end
-        print("Đã cập nhật tất cả ProximityPrompt!")
-        task.wait(60)
-    end
-end)
-
-   -- The function that takes place when the button is pressed
-   end,
-})
-
-local Toggle = TabOther:CreateToggle({
-   Name = "Spam Cursed Monster(No Cd,Cursed Spirit Attack Weapon)",
-   CurrentValue = false,
-   Flag = "Toggle10", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
+local Toggle = Tab:CreateToggle({
+	Name = "Spam Cursed Attack Monster(No Cd,Cursed Spirit Attack Item)",
+	Description = nil,
+	CurrentValue = false,
+    	Callback = function(Value)
 getgenv().autoEquip = Value
     local toolName = "Cursed Spirit Attack"
     local player = game.Players.LocalPlayer
@@ -561,66 +677,23 @@ getgenv().autoEquip = Value
         -- Đợi 50 giây trước khi tiếp tục lặp
         task.wait(5)
     end
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-   end,
+       	 -- The function that takes place when the toggle is switched
+       	 -- The variable (Value) is a boolean on whether the toggle is true or false
+    	end
+}, "Toggle") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+
+Tab:CreateSection("No Cd")
+
+local Paragraph = Tab:CreateParagraph({
+	Title = "No Cd Tut",
+	Text = "Step 1: turn on no cd,Step 2: hold the item u want no cd and wait the skill done,Step 3:change the other item with same type,Step 4: change the item u want no cd again,Step 5:hold that item and go back to step 2"
 })
 
-local Button = TabOther:CreateButton({
-   Name = "GrabTools(Teleport)",
-   Callback = function()
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoidRootPart = character:WaitForChild("HumanoidRootPart") -- Phần trung tâm của nhân vật
-
--- Kiểm tra xem một đối tượng có thể nhặt không (có Handle không)
-local function isPickupable(item)
-    return item:FindFirstChild("Handle") and item:IsA("Tool")
-end
-
--- Lặp qua tất cả các đối tượng trong Workspace
-for _, item in pairs(workspace:GetChildren()) do
-    if isPickupable(item) then
-        -- Dịch chuyển nhân vật đến vị trí của item
-        humanoidRootPart.CFrame = item.Handle.CFrame
-        break -- Chỉ dịch chuyển đến một vật phẩm đầu tiên tìm thấy
-    end
-end --Name
-   -- The function that takes place when the button is pressed
-   end,
-})
-
-local Toggle = TabOther:CreateToggle({
-   Name = "GrabTool(Auto)",
-   CurrentValue = false,
-   Flag = "Toggle11", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-getgenv().autograb = Value
- spawn(function() 
- while autograb==true do wait() 
- if not getgenv().autograb then break end 
- local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") 
- for _, child in ipairs(workspace:GetChildren()) do 
- if game.Players.LocalPlayer.Character and child:IsA("BackpackItem") and child:FindFirstChild("Handle") then 
- humanoid:EquipTool(child) 
- end 
- end 
- end 
- end)  -- Toggle,Def,callback
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-   end,
-})
-
-local Divider = TabNC:CreateDivider()
-
-local Label = TabNC:CreateLabel("Tutorial:https://youtu.be/qm_V5VbldPM?si=8GuAEUGPCmrr7XYl", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
-
-local Toggle = TabNC:CreateToggle({
-   Name = "Skill 1",
-   CurrentValue = false,
-   Flag = "Toggle12", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
+local Toggle = Tab:CreateToggle({
+	Name = "Skill 1",
+	Description = nil,
+	CurrentValue = false,
+    	Callback = function(Value)
 getgenv().AutoUseTool1 = value -- Biến để bật/tắt script
 
 spawn(function()
@@ -637,17 +710,17 @@ spawn(function()
 
         wait(0.1) -- Giảm thời gian chờ nếu muốn tốc độ kích hoạt nhanh hơn
     end
-end) -- Toggle,Def,callback
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-   end,
-})
+end)
+       	 -- The function that takes place when the toggle is switched
+       	 -- The variable (Value) is a boolean on whether the toggle is true or false
+    	end
+}, "Toggle") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 
-local Toggle = TabNC:CreateToggle({
-   Name = "Skill 2",
-   CurrentValue = false,
-   Flag = "Toggle13", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
+local Toggle = Tab:CreateToggle({
+	Name = "Skill 2",
+	Description = nil,
+	CurrentValue = false,
+    	Callback = function(Value)
 getgenv().AutoUseTool2 = value -- Biến để bật/tắt script
 
 spawn(function()
@@ -664,17 +737,17 @@ spawn(function()
 
         wait(0.1) -- Giảm thời gian chờ nếu muốn tốc độ kích hoạt nhanh hơn
     end
-end) -- Toggle,Def,callback
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-   end,
-})
+end)
+       	 -- The function that takes place when the toggle is switched
+       	 -- The variable (Value) is a boolean on whether the toggle is true or false
+    	end
+}, "Toggle") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 
-local Toggle = TabNC:CreateToggle({
-   Name = "Skill 3",
-   CurrentValue = false,
-   Flag = "Toggle13", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
+local Toggle = Tab:CreateToggle({
+	Name = "Skill 3",
+	Description = nil,
+	CurrentValue = false,
+    	Callback = function(Value)
 getgenv().AutoUseTool3 = value -- Biến để bật/tắt script
 
 spawn(function()
@@ -691,65 +764,218 @@ spawn(function()
 
         wait(0.1) -- Giảm thời gian chờ nếu muốn tốc độ kích hoạt nhanh hơn
     end
-end) -- Toggle,Def,callback
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-   end,
+end)
+       	 -- The function that takes place when the toggle is switched
+       	 -- The variable (Value) is a boolean on whether the toggle is true or false
+    	end
+}, "Toggle") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+
+local Tab = Window:CreateTab({
+	Name = "Misc",
+	Icon = "check_box_outline_blank",
+	ImageSource = "Material",
+	ShowTitle = true -- This will determine whether the big header text in the tab will show
 })
 
-local Divider = TabM:CreateDivider()
-
-local Slider = TabM:CreateSlider({
-   Name = "Walk Speed",
-   Range = {20, 200},
-   Increment = 10,
-   Suffix = "Speed",
-   CurrentValue = 20,
-   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-local player = game:GetService("Players").LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:FindFirstChildOfClass("Humanoid")
-
-if humanoid then
-    humanoid.WalkSpeed = Value -- Thay đổi giá trị này để chỉnh tốc độ
-end
-   -- The function that takes place when the slider changes
-   -- The variable (Value) is a number which correlates to the value the slider is currently at
-   end,
-})
-
-local Slider = TabM:CreateSlider({
-   Name = "Jump Power",
-   Range = {30, 100},
-   Increment = 10,
-   Suffix = "Power",
-   CurrentValue = 30,
-   Flag = "Slider2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
+local Button = Tab:CreateButton({
+	Name = "GrabTools(Teleport)",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
 local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart") -- Phần trung tâm của nhân vật
 
-local function setJumpPower(character)
-    local humanoid = character:FindFirstChildOfClass("Humanoid")
-    if humanoid then
-        humanoid.UseJumpPower = true
-        humanoid.JumpPower = Value
+-- Kiểm tra xem một đối tượng có thể nhặt không (có Handle không)
+local function isPickupable(item)
+    return item:FindFirstChild("Handle") and item:IsA("Tool")
+end
+
+-- Lặp qua tất cả các đối tượng trong Workspace
+for _, item in pairs(workspace:GetChildren()) do
+    if isPickupable(item) then
+        -- Dịch chuyển nhân vật đến vị trí của item
+        humanoidRootPart.CFrame = item.Handle.CFrame
+        break -- Chỉ dịch chuyển đến một vật phẩm đầu tiên tìm thấy
+    end
+end
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Toggle = Tab:CreateToggle({
+	Name = "GrabTools(Auto)",
+	Description = nil,
+	CurrentValue = false,
+    	Callback = function(Value)
+getgenv().autograb = Value
+ spawn(function() 
+ while autograb==true do wait() 
+ if not getgenv().autograb then break end 
+ local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") 
+ for _, child in ipairs(workspace:GetChildren()) do 
+ if game.Players.LocalPlayer.Character and child:IsA("BackpackItem") and child:FindFirstChild("Handle") then 
+ humanoid:EquipTool(child) 
+ end 
+ end 
+ end 
+ end)  
+       	 -- The function that takes place when the toggle is switched
+       	 -- The variable (Value) is a boolean on whether the toggle is true or false
+    	end
+}, "Toggle") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+
+local Button = Tab:CreateButton({
+	Name = "idk what but buff speed",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+-- LocalScript, đặt trong StarterPlayerScripts
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("HumanoidRootPart")
+
+-- Thời gian giữa mỗi lần kiểm tra chuyển động
+local CHECK_INTERVAL = 0.05
+-- Khoảng cách dịch chuyển mỗi bước
+local TELEPORT_DISTANCE = 1
+
+local lastPosition = humanoid.Position
+
+RunService.Heartbeat:Connect(function()
+	local currentPosition = humanoid.Position
+	local moveDirection = (currentPosition - lastPosition)
+	
+	if moveDirection.Magnitude > 0.01 then
+		local moveVector = moveDirection.Unit * TELEPORT_DISTANCE
+		humanoid.CFrame = humanoid.CFrame + moveVector
+	end
+	
+	lastPosition = humanoid.Position
+	task.wait(CHECK_INTERVAL)
+end)
+
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Instant Proximity",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+local function updatePrompt(prompt)
+    if prompt:IsA("ProximityPrompt") then
+        prompt.HoldDuration = 0
     end
 end
 
-setJumpPower(player.Character or player.CharacterAdded:Wait())
-player.CharacterAdded:Connect(setJumpPower) -- Áp dụng lại khi respawn
+-- Cập nhật tất cả Prompt hiện có
+for _, obj in pairs(game:GetDescendants()) do
+    updatePrompt(obj)
+end
 
-   -- The function that takes place when the slider changes
-   -- The variable (Value) is a number which correlates to the value the slider is currently at
-   end,
+-- Khi có Prompt mới xuất hiện, tự động chỉnh
+game.DescendantAdded:Connect(updatePrompt)
+
+-- Cứ mỗi 1 phút kiểm tra lại để đảm bảo không bị bỏ sót
+task.spawn(function()
+    while true do
+        for _, obj in pairs(game:GetDescendants()) do
+            updatePrompt(obj)
+        end
+        print("Đã cập nhật tất cả ProximityPrompt!")
+        task.wait(60)
+    end
+end)
+         -- The function that takes place when the button is pressed
+    	end
 })
 
-local Toggle = TabM:CreateToggle({
-   Name = "Esp",
-   CurrentValue = false,
-   Flag = "Toggle14", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
+local Toggle = Tab:CreateToggle({
+	Name = "Auto Proximity",
+	Description = nil,
+	CurrentValue = false,
+    	Callback = function(Value)
+getgenv().AutoProximity = Value
+
+    spawn(function()
+        while getgenv().AutoProximity do
+            local prompt = nil
+            pcall(function()
+                local player = game.Players.LocalPlayer
+                local character = player.Character
+                if character and character.PrimaryPart then
+                    local shortestDistance = math.huge
+                    for _, p in pairs(workspace:GetDescendants()) do
+                        if p:IsA("ProximityPrompt") and p.Enabled then
+                            local distance = (character.PrimaryPart.Position - p.Parent.Position).Magnitude
+                            if distance < shortestDistance then
+                                prompt = p
+                                shortestDistance = distance
+                            end
+                        end
+                    end
+                end
+            end)
+
+            if prompt then
+                fireproximityprompt(prompt)
+            end
+            wait(0.1)
+        end
+    end)
+       	 -- The function that takes place when the toggle is switched
+       	 -- The variable (Value) is a boolean on whether the toggle is true or false
+    	end
+}, "Toggle") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+
+local Button = Tab:CreateButton({
+	Name = "Inf Jump",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+getgenv().infi = Value
+ local Player = game.Players.LocalPlayer 
+ if infi ~= inf then 
+ inf = game.UserInputService.JumpRequest:Connect(function() 
+ if infi == false then inf:Disconnect() end 
+     Player.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping) 
+ wait() 
+ end) 
+ end 
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Toggle = Tab:CreateToggle({
+	Name = "Noclip",
+	Description = nil,
+	CurrentValue = false,
+    	Callback = function(Value)
+getgenv().Clip = Value 
+ wait(0.1) 
+ local function NoclipLoop() 
+ if Clip == true and game.Players.LocalPlayer.Character ~= nil then 
+ for _, c in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do 
+                                 if c:IsA("BasePart") and c.CanCollide == true and c.Name ~= floatName then 
+ c.CanCollide = false 
+ end 
+ end 
+ end 
+ end 
+ Noclipping = game:GetService("RunService").Stepped:Connect(NoclipLoop) 
+
+ if not getgenv().Clip then Noclipping:Disconnect() end
+       	 -- The function that takes place when the toggle is switched
+       	 -- The variable (Value) is a boolean on whether the toggle is true or false
+    	end
+}, "Toggle") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+
+local Toggle = Tab:CreateToggle({
+	Name = "Esp",
+	Description = nil,
+	CurrentValue = false,
+    	Callback = function(Value)
 getgenv().FlaggingESP = Value
 
     local function ApplyESP(v)
@@ -772,162 +998,152 @@ getgenv().FlaggingESP = Value
             task.wait(0.33)
             ApplyESP(v)
         end)
-    end) -- Toggle,Def,callback
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-   end,
+    end)
+       	 -- The function that takes place when the toggle is switched
+       	 -- The variable (Value) is a boolean on whether the toggle is true or false
+    	end
+}, "Toggle") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+
+local Tab = Window:CreateTab({
+	Name = "Visual",
+	Icon = "info",
+	ImageSource = "Material",
+	ShowTitle = true -- This will determine whether the big header text in the tab will show
 })
 
-local Toggle = TabM:CreateToggle({
-   Name = "Noclip",
-   CurrentValue = false,
-   Flag = "Toggle15", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Value)
-getgenv().Clip = Value 
- wait(0.1) 
- local function NoclipLoop() 
- if Clip == true and game.Players.LocalPlayer.Character ~= nil then 
- for _, c in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do 
-                                 if c:IsA("BasePart") and c.CanCollide == true and c.Name ~= floatName then 
- c.CanCollide = false 
- end 
- end 
- end 
- end 
- Noclipping = game:GetService("RunService").Stepped:Connect(NoclipLoop) 
+local Input = Tab:CreateInput({
+	Name = "Fake Beli",
+	Description = nil,
+	PlaceholderText = "number",
+	CurrentValue = "Text", -- the current text
+	Numeric = true, -- When true, the user may only type numbers in the box (Example walkspeed)
+	MaxCharacters = nil, -- if a number, the textbox length cannot exceed the number
+	Enter = false, -- When true, the callback will only be executed when the user presses enter.
+    	Callback = function(Text)
+local player = game.Players.LocalPlayer
+player.Stats.Beli.Value = Text
 
- if not getgenv().Clip then Noclipping:Disconnect() end
-   -- The function that takes place when the toggle is pressed
-   -- The variable (Value) is a boolean on whether the toggle is true or false
-   end,
+       	 -- The function that takes place when the input is changed
+	 -- The variable (Text) is a string for the value in the text box
+    	end
+}, "Input") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+
+local Input = Tab:CreateInput({
+	Name = "Fake EXP",
+	Description = nil,
+	PlaceholderText = "number",
+	CurrentValue = "Text", -- the current text
+	Numeric = true, -- When true, the user may only type numbers in the box (Example walkspeed)
+	MaxCharacters = nil, -- if a number, the textbox length cannot exceed the number
+	Enter = false, -- When true, the callback will only be executed when the user presses enter.
+    	Callback = function(Text)
+local player = game.Players.LocalPlayer
+player.Stats.Exp.Value = Text
+
+       	 -- The function that takes place when the input is changed
+	 -- The variable (Text) is a string for the value in the text box
+    	end
+}, "Input") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+
+local Input = Tab:CreateInput({
+	Name = "Fake Level",
+	Description = nil,
+	PlaceholderText = "number",
+	CurrentValue = "Text", -- the current text
+	Numeric = true, -- When true, the user may only type numbers in the box (Example walkspeed)
+	MaxCharacters = nil, -- if a number, the textbox length cannot exceed the number
+	Enter = false, -- When true, the callback will only be executed when the user presses enter.
+    	Callback = function(Text)
+local player = game.Players.LocalPlayer
+player.Stats.Level.Value = Text
+
+       	 -- The function that takes place when the input is changed
+	 -- The variable (Text) is a string for the value in the text box
+    	end
+}, "Input") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+
+local Input = Tab:CreateInput({
+	Name = "Fake Skill Point",
+	Description = nil,
+	PlaceholderText = "number",
+	CurrentValue = "Text", -- the current text
+	Numeric = true, -- When true, the user may only type numbers in the box (Example walkspeed)
+	MaxCharacters = nil, -- if a number, the textbox length cannot exceed the number
+	Enter = false, -- When true, the callback will only be executed when the user presses enter.
+    	Callback = function(Text)
+local player = game.Players.LocalPlayer
+player.Stats.SkillPoint.Value = Text
+
+       	 -- The function that takes place when the input is changed
+	 -- The variable (Text) is a string for the value in the text box
+    	end
+}, "Input") -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+
+local Tab = Window:CreateTab({
+	Name = "Teleport",
+	Icon = "login",
+	ImageSource = "Material",
+	ShowTitle = true -- This will determine whether the big header text in the tab will show
 })
 
-local Divider = TabTP:CreateDivider()
+Tab:CreateSection("Island")
 
-local Label = TabTP:CreateLabel("Normal", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
-
-local Button = TabTP:CreateButton({
-   Name = "Chad island",
-   Callback = function()
+local Button = Tab:CreateButton({
+	Name = "Chad",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
 local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
     local targetPosition = Vector3.new(-709, 10, 509)
     character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
    -- The function that takes place when the button is pressed
-   end,
+         -- The function that takes place when the button is pressed
+    	end
 })
 
-local Button = TabTP:CreateButton({
-   Name = "Big Brain island",
-   Callback = function()
+local Button = Tab:CreateButton({
+	Name = "Big Brain",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
 local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
     local targetPosition = Vector3.new(556, 10, 506)
     character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
    -- The function that takes place when the button is pressed
-   end,
+         -- The function that takes place when the button is pressed
+    	end
 })
 
-local Button = TabTP:CreateButton({
-   Name = "Desert island",
-   Callback = function()
+local Button = Tab:CreateButton({
+	Name = "Desert",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
 local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
     local targetPosition = Vector3.new(-340.91278076171875, 18.29494857788086, -997.4833374023438)
     character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
    -- The function that takes place when the button is pressed
-   end,
+         -- The function that takes place when the button is pressed
+    	end
 })
 
-local Button = TabTP:CreateButton({
-   Name = "Desert Fishing",
-   Callback = function()
-local player = game.Players.LocalPlayer
-    local character = player.Character or player.CharacterAdded:Wait()
-    local targetPosition = Vector3.new(890.1141967773438, 9.118748664855957, -828.7176513671875)
-    character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-   -- The function that takes place when the button is pressed
-   end,
-})
-
-local Button = TabTP:CreateButton({
-   Name = "Cabybara Fight Room",
-   Callback = function()
-local player = game.Players.LocalPlayer
-    local character = player.Character or player.CharacterAdded:Wait()
-    local targetPosition = Vector3.new(5432.73046875, 1755.6904296875, 610.4720458984375)
-    character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-   -- The function that takes place when the button is pressed
-   end,
-})
-
-local Button = TabTP:CreateButton({
-   Name = "Maxwell Fight Room",
-   Callback = function()
-local player = game.Players.LocalPlayer
-    local character = player.Character or player.CharacterAdded:Wait()
-    local targetPosition = Vector3.new(-14569.0859375, 4700.61181640625, -3191.745361328125)
-    character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-   -- The function that takes place when the button is pressed
-   end,
-})
-
-local Button = TabTP:CreateButton({
-   Name = "Magma island",
-   Callback = function()
+local Button = Tab:CreateButton({
+	Name = "Magma",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
 local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
     local targetPosition = Vector3.new(2801.695556640625, 11.266153335571289, -180.07965087890625)
     character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
    -- The function that takes place when the button is pressed
-   end,
+         -- The function that takes place when the button is pressed
+    	end
 })
 
-local Button = TabTP:CreateButton({
-   Name = "Dog Fight Room",
-   Callback = function()
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
-
--- Tọa độ đích
-local targetPosition = Vector3.new(9000.396484375, 1750.1824951171875, -3042.721435546875)
-
--- Dịch chuyển nhân vật đến tọa độ
-character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-   -- The function that takes place when the button is pressed
-   end,
-})
-
-local Button = TabTP:CreateButton({
-   Name = "Magma Raid",
-   Callback = function()
-local player = game.Players.LocalPlayer
-    local character = player.Character or player.CharacterAdded:Wait()
-    local targetPosition = Vector3.new(3485.044677734375, 23.636802673339844, -1055.036865234375)
-    character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-   -- The function that takes place when the button is pressed
-   end,
-})
-
-local Button = TabTP:CreateButton({
-   Name = "Magma Fishing",
-   Callback = function()
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
-
--- Tọa độ đích
-local targetPosition = Vector3.new(3871.954833984375, 16.650545120239258, 572.737548828125)
-
--- Dịch chuyển nhân vật đến tọa độ
-character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-   -- The function that takes place when the button is pressed
-   end,
-})
-local Button = TabTP:CreateButton({
-   Name = "Snow island",
-   Callback = function()
+local Button = Tab:CreateButton({
+	Name = "Snow",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
@@ -938,28 +1154,47 @@ local targetPosition = Vector3.new(-2597.051513671875, 32.039512634277344, -986.
 -- Dịch chuyển nhân vật đến tọa độ
 character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
    -- The function that takes place when the button is pressed
-   end,
+         -- The function that takes place when the button is pressed
+    	end
 })
 
-local Button = TabTP:CreateButton({
-   Name = "Praying",
-   Callback = function()
+Tab:CreateSection("Fishing")
+
+local Button = Tab:CreateButton({
+	Name = "Desert Fishing",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
+local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local targetPosition = Vector3.new(890.1141967773438, 9.118748664855957, -828.7176513671875)
+    character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+   -- The function that takes place when the button is pressed
+         -- The function that takes place when the button is pressed
+    	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Magma Fishing",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
 
 -- Tọa độ đích
-local targetPosition = Vector3.new(-3513.5810546875, 400.43157958984375, -642.6527709960938)
+local targetPosition = Vector3.new(3871.954833984375, 16.650545120239258, 572.737548828125)
 
 -- Dịch chuyển nhân vật đến tọa độ
 character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
    -- The function that takes place when the button is pressed
-   end,
+         -- The function that takes place when the button is pressed
+    	end
 })
 
-local Button = TabTP:CreateButton({
-   Name = "Snow Fishing",
-   Callback = function()
+local Button = Tab:CreateButton({
+	Name = "Snow Fishing",
+	Description = nil, -- Creates A Description For Users to know what the button does (looks bad if you use it all the time),
+    	Callback = function()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
@@ -970,138 +1205,151 @@ local targetPosition = Vector3.new(-3072.841064453125, 10.895713806152344, 300.0
 -- Dịch chuyển nhân vật đến tọa độ
 character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
    -- The function that takes place when the button is pressed
-   end,
+         -- The function that takes place when the button is pressed
+    	end
 })
 
-local Label = TabTP:CreateLabel("Special Boss", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+Tab:CreateSection("Boss Summon/Fight Room")
 
-local Button = TabTP:CreateButton({
-   Name = "Geto Fight Room",
-   Callback = function()
-local player = game.Players.LocalPlayer
-    local character = player.Character or player.CharacterAdded:Wait()
-    local targetPosition = Vector3.new(5217.044921875, 2260.821533203125, -4130.38330078125)
-    character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-   -- The function that takes place when the button is pressed
-   end,
+local Button = Tab:CreateButton({
+	Name = "Cabybara Fight Room",
+	Description = nil,
+	Callback = function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local targetPosition = Vector3.new(5432.73046875, 1755.6904296875, 610.4720458984375)
+		character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+	end
 })
 
-local Button = TabTP:CreateButton({
-   Name = "Diavolo Summon",
-   Callback = function()
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
-
--- Tọa độ đích
-local targetPosition = Vector3.new(2238.60400390625, 20.818754196166992, 649.405029296875)
-
--- Dịch chuyển nhân vật đến tọa độ
-character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-   -- The function that takes place when the button is pressed
-   end,
+local Button = Tab:CreateButton({
+	Name = "Maxwell Fight Room",
+	Description = nil,
+	Callback = function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local targetPosition = Vector3.new(-14569.0859375, 4700.61181640625, -3191.745361328125)
+		character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+	end
 })
 
-local Button = TabTP:CreateButton({
-   Name = "Mahito/Dagon Summon",
-   Callback = function()
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
-
--- Tọa độ đích
-local targetPosition = Vector3.new(-2516.0263671875, 11.406415939331055, 123.847412109375)
-
--- Dịch chuyển nhân vật đến tọa độ
-character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-   -- The function that takes place when the button is pressed
-   end,
+local Button = Tab:CreateButton({
+	Name = "Dog Fight Room",
+	Description = nil,
+	Callback = function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local targetPosition = Vector3.new(9000.396484375, 1750.1824951171875, -3042.721435546875)
+		character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+	end
 })
 
-local Button = TabTP:CreateButton({
-   Name = "Misaka Fight Room",
-   Callback = function()
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
-
--- Tọa độ đích
-local targetPosition = Vector3.new(-3605, 1250, 10453)
-
--- Dịch chuyển nhân vật đến tọa độ
-character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-   -- The function that takes place when the button is pressed
-   end,
+local Button = Tab:CreateButton({
+	Name = "Summon Lava Raid",
+	Description = nil,
+	Callback = function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local targetPosition = Vector3.new(3485.044677734375, 23.636802673339844, -1055.036865234375)
+		character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+	end
 })
 
-local Button = TabTP:CreateButton({
-   Name = "Dagon Fight Room",
-   Callback = function()
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
-
--- Tọa độ đích
-local targetPosition = Vector3.new(1634, 22071, 59964)
-
--- Dịch chuyển nhân vật đến tọa độ
-character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-   -- The function that takes place when the button is pressed
-   end,
+local Button = Tab:CreateButton({
+	Name = "Praying",
+	Description = nil,
+	Callback = function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local targetPosition = Vector3.new(-3513.5810546875, 400.43157958984375, -642.6527709960938)
+		character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+	end
 })
 
-local Button = TabTP:CreateButton({
-   Name = "Dagon Domain",
-   Callback = function()
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
-
--- Tọa độ đích
-local targetPosition = Vector3.new(27052.248046875, 24330.271484375, 44108.421875)
-
--- Dịch chuyển nhân vật đến tọa độ
-character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-   -- The function that takes place when the button is pressed
-   end,
+local Button = Tab:CreateButton({
+	Name = "Geto Fight Room",
+	Description = nil,
+	Callback = function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local targetPosition = Vector3.new(5217.044921875, 2260.821533203125, -4130.38330078125)
+		character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+	end
 })
 
-local Button = TabTP:CreateButton({
-   Name = "Mahito Fight Room",
-   Callback = function()
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
-
--- Tọa độ đích
-local targetPosition = Vector3.new(-37975, 21990, 67347)
-
--- Dịch chuyển nhân vật đến tọa độ
-character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-   -- The function that takes place when the button is pressed
-   end,
+local Button = Tab:CreateButton({
+	Name = "Diavolo Summon",
+	Description = nil,
+	Callback = function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local targetPosition = Vector3.new(2238.60400390625, 20.818754196166992, 649.405029296875)
+		character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+	end
 })
 
-local Button = TabTP:CreateButton({
-   Name = "Mahito Domain",
-   Callback = function()
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
-
--- Tọa độ đích
-local targetPosition = Vector3.new(-27548.91015625, 16200.41015625, 5832.3046875)
-
--- Dịch chuyển nhân vật đến tọa độ
-character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
-   -- The function that takes place when the button is pressed
-   end,
+local Button = Tab:CreateButton({
+	Name = "Mahito/Dagon Summon",
+	Description = nil,
+	Callback = function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local targetPosition = Vector3.new(-2516.0263671875, 11.406415939331055, 123.847412109375)
+		character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+	end
 })
 
-local Divider = TabC:CreateDivider()
+local Button = Tab:CreateButton({
+	Name = "Misaka Fight Room",
+	Description = nil,
+	Callback = function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local targetPosition = Vector3.new(-3605, 1250, 10453)
+		character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+	end
+})
 
-local Label = TabC:CreateLabel("Script Make By 54hz(Ngoc Mai)", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+local Button = Tab:CreateButton({
+	Name = "Dagon Fight Room",
+	Description = nil,
+	Callback = function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local targetPosition = Vector3.new(1634, 22071, 59964)
+		character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+	end
+})
 
-local Label = TabC:CreateLabel("Discord:https://discord.gg/NtakBUPbkW", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+local Button = Tab:CreateButton({
+	Name = "Dagon Domain",
+	Description = nil,
+	Callback = function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local targetPosition = Vector3.new(27052.248046875, 24330.271484375, 44108.421875)
+		character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+	end
+})
 
-local Label = TabC:CreateLabel("Youtube:https://youtube.com/@mylinhhuynhthi-si9rs?si=B51GqQe384d28VZ9", 4483362458, Color3.fromRGB(0, 0, 0), false) -- Title, Icon, Color, IgnoreTheme
+local Button = Tab:CreateButton({
+	Name = "Mahito Fight Room",
+	Description = nil,
+	Callback = function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local targetPosition = Vector3.new(-37975, 21990, 67347)
+		character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+	end
+})
+
+local Button = Tab:CreateButton({
+	Name = "Mahito Domain",
+	Description = nil,
+	Callback = function()
+		local player = game.Players.LocalPlayer
+		local character = player.Character or player.CharacterAdded:Wait()
+		local targetPosition = Vector3.new(-27548.91015625, 16200.41015625, 5832.3046875)
+		character:SetPrimaryPartCFrame(CFrame.new(targetPosition))
+	end
+})
