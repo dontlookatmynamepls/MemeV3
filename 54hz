@@ -3,7 +3,7 @@ local player = game.Players.LocalPlayer
 if player.Name == "nothing" or player.Name == "hoajldh456" or player.Name == "dummy" or player.Name == "hoang_huy1k9" or player.Name == "thaylam5A1" then
     print("buy script")
 else
-    player:Kick("buy script discord:nhm_roblox")
+    player:Kick("not verify!,discord:nhm_roblox")
 end
 
 local Luna = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/main/source.lua", true))()
