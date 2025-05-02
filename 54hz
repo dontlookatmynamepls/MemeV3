@@ -51,6 +51,13 @@ local Tab = Window:CreateTab({
 	ShowTitle = true -- This will determine whether the big header text in the tab will show
 })
 
+Tab:CreateSection("Flandre Hub Mini Update")
+
+local Label = Tab:CreateLabel({
+	Text = "+ Fixed No Cd Not Working",
+	Style = 2 -- Luna Labels Have 3 Styles : A Basic Label, A Green Information Label and A Red Warning Label. Look At The Following Image For More Details
+})
+
 Tab:CreateSection("Flandre Hub Update V4.6")
 
 local Label = Tab:CreateLabel({
@@ -694,7 +701,7 @@ local Toggle = Tab:CreateToggle({
 	Description = nil,
 	CurrentValue = false,
     	Callback = function(Value)
-getgenv().AutoUseTool1 = value -- Biến để bật/tắt script
+getgenv().AutoUseTool1 = Value -- Biến để bật/tắt script
 
 spawn(function()
     while AutoUseTool1 do
@@ -721,7 +728,7 @@ local Toggle = Tab:CreateToggle({
 	Description = nil,
 	CurrentValue = false,
     	Callback = function(Value)
-getgenv().AutoUseTool2 = value -- Biến để bật/tắt script
+getgenv().AutoUseTool2 = Value -- Biến để bật/tắt script
 
 spawn(function()
     while AutoUseTool2 do
@@ -748,7 +755,7 @@ local Toggle = Tab:CreateToggle({
 	Description = nil,
 	CurrentValue = false,
     	Callback = function(Value)
-getgenv().AutoUseTool3 = value -- Biến để bật/tắt script
+getgenv().AutoUseTool3 = Value -- Biến để bật/tắt script
 
 spawn(function()
     while AutoUseTool3 do
