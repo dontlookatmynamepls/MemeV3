@@ -346,19 +346,18 @@ spawn(function()
     local player = Players.LocalPlayer
     local invData = player:WaitForChild("InvData")
 
+    -- Các từ khóa cần kiểm tra trong tên
+    local allowedKeywords = { "Shirt", "Armor" }
+
     while true do
         for _, item in pairs(invData:GetChildren()) do
             if item:IsA("IntValue") then
-                local name = item.Name
-
-                -- Kiểm tra nếu tên chứa "Shirt" hoặc "Armor"
-                local containsKeyword = string.find(name, "Shirt") or string.find(name, "Armor")
-                
-                -- Kiểm tra nếu tên kết thúc bằng "Helmet"
-                local endsWithHelmet = name:sub(-6) == "Helmet"
-
-                if containsKeyword or endsWithHelmet then
-                    ReplicatedStorage.OtherThing.Tools:FireServer(name, "Helmet")
+                for _, keyword in ipairs(allowedKeywords) do
+                    if string.find(item.Name, keyword) then
+                        -- Gửi tên item và loại Armor
+                        ReplicatedStorage.OtherThing.Tools:FireServer(item.Name, "Helmet")
+                        break -- Thoát khỏi vòng lặp từ khóa nếu đã khớp
+                    end
                 end
             end
         end
