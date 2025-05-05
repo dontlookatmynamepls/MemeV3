@@ -1,10 +1,4 @@
-local player = game.Players.LocalPlayer
-
-if player.Name == "RianSadBoi" or player.Name == "hoajldh456" or player.Name == "KitsunPNG" or player.Name == "hoang_huy1k9" or player.Name == "thaylam5A1" then
-    print("buy script")
-else
-    player:Kick("not verify!,discord:nhm_roblox")
-end
+game.Players.LocalPlayer:Kick("Vote In Dis")
 
 local WindUI = loadstring(game:HttpGet("https://tree-hub.vercel.app/api/UI/WindUI"))()
 
