@@ -165,65 +165,6 @@ triggerAllRemoteEvents()
 })
 
 local Button = Tab3:Button({
-    Title = "Dupe Change 2 Team",
-    Desc = "Only Work At Spawn Room",
-    Callback = function()
-local Players = game:GetService("Players")
-local VirtualInputManager = game:GetService("VirtualInputManager")
-local RunService = game:GetService("RunService")
-
-local player = Players.LocalPlayer
-local gui = player:WaitForChild("PlayerGui"):WaitForChild("Choose2")
-local buttonBigBrain = gui:WaitForChild("Big Brain")
-local buttonChad = gui:WaitForChild("Chad")
-
--- Hàm gửi click tại vị trí (x, y)
-local function sendClick(x, y)
-    RunService.RenderStepped:Wait()
-    VirtualInputManager:SendMouseButtonEvent(x, y, 0, true, game, 0)
-    VirtualInputManager:SendMouseButtonEvent(x, y, 0, false, game, 0)
-end
-
--- Lấy vị trí click bên dưới nút
-local function getBottomOfButton(button)
-    local pos = button.AbsolutePosition
-    local size = button.AbsoluteSize
-    return pos.X + size.X / 2, pos.Y + size.Y
-end
-
--- Lấy vị trí cạnh dưới màn hình
-local function getBottomOfScreen(offsetX)
-    local screenSize = workspace.CurrentCamera.ViewportSize
-    local x = screenSize.X * offsetX
-    local y = screenSize.Y - 1
-    return x, y
-end
-
--- Hàm chính thực hiện 10 lần click tại mỗi điểm
-local function clickAllPoints()
-    -- Tọa độ dưới mỗi nút
-    local x1, y1 = getBottomOfButton(buttonBigBrain)
-    local x2, y2 = getBottomOfButton(buttonChad)
-
-    -- Tọa độ dưới màn hình (2 điểm, trái và phải)
-    local x3, y3 = getBottomOfScreen(0.3)  -- 30% ngang màn hình
-    local x4, y4 = getBottomOfScreen(0.7)  -- 70% ngang màn hình
-
-    for i = 1, 10 do
-        sendClick(x1, y1)  -- Dưới nút Big Brain
-        sendClick(x2, y2)  -- Dưới nút Chad
-        sendClick(x3, y3)  -- Cạnh dưới màn hình (trái)
-        sendClick(x4, y4)  -- Cạnh dưới màn hình (phải)
-    end
-end
-
--- Gọi hàm
-clickAllPoints()
-
-    end,
-})
-
-local Button = Tab3:Button({
     Title = "Equip Helmet(idk)",
     Desc = "Best Helmet Combo",
     Callback = function()
