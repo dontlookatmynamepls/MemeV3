@@ -6,7 +6,7 @@ else
     player:Kick("not verify!,discord:nhm_roblox")
 end
 
-local WindUI = loadstring(game:HttpGet("https://tree-hub.vercel.app/api/UI/WindUI"))()
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
 local Window = WindUI:CreateWindow({
     Title = "Flandre Hub", -- UI Title
@@ -66,17 +66,17 @@ local Tab37 = Window:Tab({
 
 local Tab4 = Window:Tab({
     Title = "Misc",
-    Icon = "description", -- lucide or rbxassetid
+    Icon = "info", -- lucide or rbxassetid
 })
 
 local Tab5 = Window:Tab({
     Title = "Visual",
-    Icon = "pending", -- lucide or rbxassetid
+    Icon = "list", -- lucide or rbxassetid
 })
 
 local Tab6 = Window:Tab({
     Title = "Teleport",
-    Icon = "logout", -- lucide or rbxassetid
+    Icon = "folder", -- lucide or rbxassetid
 })
 
 local Tab7 = Window:Tab({
@@ -94,8 +94,8 @@ local Paragraph = Tab1:Paragraph({
 })
 
 local Paragraph = Tab1:Paragraph({
-    Title = "Flandre Hub Update V4.7",
-    Desc = "+ Added Dupe Fruit Skill",
+    Title = "Flandre Hub Update V4.8",
+    Desc = "+ Added Dupe Fruit Skill \n+ Added Dupe Team Stats \n+ Fixed Auto Pray",
     Image = "check",
     Color= "Green",
 })
@@ -166,7 +166,7 @@ triggerAllRemoteEvents()
 
 local Button = Tab3:Button({
     Title = "Dupe Change 2 Team",
-    Desc = "Only Work At Spawn Room",
+    Desc = "Only Work At Spawn Room(some phone not work,use auto click)",
     Callback = function()
 local Players = game:GetService("Players")
 local VirtualInputManager = game:GetService("VirtualInputManager")
@@ -486,7 +486,7 @@ end
 
 local Toggle = Tab3:Toggle({
     Title = "Auto Pray",
-    Desc = "Lv 1200",
+    Desc = "Lv 1200(some phone not work)",
     Value = false,
     Callback = function(Value)
 getgenv().AutoPray = Value -- Đổi thành false để tắt script
@@ -501,8 +501,8 @@ local function c(btn)
     local btnPos = btn.AbsolutePosition
     local btnSize = btn.AbsoluteSize 
     local btn = btnPos + (btnSize / 1)
-    v:SendMouseButtonEvent(btn.X, btn.Y - 2, 0, true, game, 0)
-    v:SendMouseButtonEvent(btn.X, btn.Y - 2, 0, false, game, 0)
+    v:SendMouseButtonEvent(btn.X, btn.Y, 0, true, game, 0)
+    v:SendMouseButtonEvent(btn.X, btn.Y, 0, false, game, 0)
 end
 
 task.spawn(function()
