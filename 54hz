@@ -950,7 +950,6 @@ local Input = Tab5:Input({
     Callback = function(Text)
 local player = game.Players.LocalPlayer
 player.Stats.Exp.Value = Text
-
     end
 })
 
@@ -963,7 +962,6 @@ local Input = Tab5:Input({
     Callback = function(Text)
 local player = game.Players.LocalPlayer
 player.Stats.Level.Value = Text
-
     end
 })
 
@@ -976,7 +974,6 @@ local Input = Tab5:Input({
     Callback = function(Text)
 local player = game.Players.LocalPlayer
 player.Stats.SkillPoint.Value = Text
-
     end
 })
 
