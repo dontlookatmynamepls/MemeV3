@@ -33,10 +33,10 @@ end,
 },
 KeySystem = {
 Key = { "LegoLua_Key_6y3olitg21" },
-Note = "Key System.",
+Note = "key is:LegoLua_Key_6y3olitg21",
 Thumbnail = {
 Image = "",
-Title = "Fuck You",
+Title = "",
 },
 URL = "https://discord.gg/pba3uuxeeg",
 SaveKey = false,
