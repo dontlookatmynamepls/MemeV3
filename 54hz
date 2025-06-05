@@ -110,7 +110,7 @@ local Paragraph = Tab1:Paragraph({
 
 local Paragraph = Tab1:Paragraph({
     Title = "Flandre Hub Update V4.8",
-    Desc = "+ Added Dupe Fruit Skill \n+ Added Dupe Team Stats \n+ Fixed Auto Pray",
+    Desc = "+ Added Dupe Fruit Skill \n+ Fixed Auto Pray",
     Image = "check",
     Color= "Green",
 })
