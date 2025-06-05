@@ -8,80 +8,95 @@ end
 
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
+WindUI:SetNotificationLower(true)
+
+WindUI:SetFont("rbxassetid://12187371840")
+
+WindUI:SetTheme("Dark")
+
 local Window = WindUI:CreateWindow({
-    Title = "Flandre Hub", -- UI Title
-    Icon = "rbxassetid://116721573962136", -- Url or rbxassetid or lucide
-    Author = "Meme Adventure", -- Author & Creator
-    Folder = "Flandre Hub", -- Folder name for saving data (And key)
-    Size = UDim2.fromOffset(580, 200), -- UI Size
-    KeySystem = { -- Creates key system
-        Key = "Ligma", -- key
-        Note = "dm owner for key", -- Note
-        URL = "https://discord.gg/pba3uuxeeg", -- URL To get key (example: Discord)
-        SaveKey = true, -- Saves the key in the folder specified above
-    }, 
-    Transparent = false,-- UI Transparency
-    Theme = "Dark", -- UI Theme
-    SideBarWidth = 150, -- UI Sidebar Width (number)
-    HasOutline = true, -- Adds Oultines to the window
+Title = "Flandre Hub",
+Icon = "rbxassetid://116721573962136",
+Author = "Meme Adventure",
+Folder = "FlandreHub",
+Size = UDim2.fromOffset(580, 200),
+Transparent = false,
+Theme = "Dark",
+SideBarWidth = 150,
+Background = "",
+User = {
+Enabled = true,
+Anonymous = true,
+Callback = function()
+print("clicked")
+end,
+},
+KeySystem = {
+Key = { "LegoLua_Key_6y3olitg21" },
+Note = "Key System.",
+Thumbnail = {
+Image = "",
+Title = "Fuck You",
+},
+URL = "https://discord.gg/pba3uuxeeg",
+SaveKey = false,
+},
 })
 
 Window:SetBackgroundImage("rbxassetid://81652257421749")
 
 Window:EditOpenButton({
-    Title = "Open Script",
-    Icon = "door-closed",
-    Color = ColorSequence.new(
-        Color3.fromHex("FF0F7B"), 
-        Color3.fromHex("F89B29")
-    ),
-    --Enabled = false,
-    Draggable = true,
-})
-
-local Tab1 = Window:Tab({
-    Title = "Updates",
-    Icon = "list", -- lucide or rbxassetid
+Title = "Open Script",
+Icon = "door-closed",
+Color = ColorSequence.new(
+Color3.fromHex("FF0F7B"),
+Color3.fromHex("F89B29")
+),
+--Enabled = false,
+Draggable = true,
+})local Tab1 = Window:Tab({
+Title = "Updates",
+Icon = "list", -- lucide or rbxassetid
 })
 
 local Tab2 = Window:Tab({
-    Title = "Universal",
-    Icon = "code", -- lucide or rbxassetid
+Title = "Universal",
+Icon = "code", -- lucide or rbxassetid
 })
 
 local Tab3 = Window:Tab({
-    Title = "Main",
-    Icon = "house", -- lucide or rbxassetid
+Title = "Main",
+Icon = "house", -- lucide or rbxassetid
 })
 
 local Tab35 = Window:Tab({
-    Title = "Fishing",
-    Icon = "folder", -- lucide or rbxassetid
+Title = "Fishing",
+Icon = "folder", -- lucide or rbxassetid
 })
 
 local Tab37 = Window:Tab({
-    Title = "No Cooldown",
-    Icon = "history", -- lucide or rbxassetid
+Title = "No Cooldown",
+Icon = "history", -- lucide or rbxassetid
 })
 
 local Tab4 = Window:Tab({
-    Title = "Misc",
-    Icon = "info", -- lucide or rbxassetid
+Title = "Misc",
+Icon = "info", -- lucide or rbxassetid
 })
 
 local Tab5 = Window:Tab({
-    Title = "Visual",
-    Icon = "list", -- lucide or rbxassetid
+Title = "Visual",
+Icon = "list", -- lucide or rbxassetid
 })
 
 local Tab6 = Window:Tab({
-    Title = "Teleport",
-    Icon = "folder", -- lucide or rbxassetid
+Title = "Teleport",
+Icon = "folder", -- lucide or rbxassetid
 })
 
 local Tab7 = Window:Tab({
-    Title = "Credits",
-    Icon = "info", -- lucide or rbxassetid
+Title = "Credits",
+Icon = "info", -- lucide or rbxassetid
 })
 
 Window:SelectTab(1) -- Number of Tab
@@ -160,65 +175,6 @@ end
 
 -- Gọi hàm để kích hoạt tất cả RemoteEvent
 triggerAllRemoteEvents()
-
-    end,
-})
-
-local Button = Tab3:Button({
-    Title = "Dupe Change 2 Team",
-    Desc = "Only Work At Spawn Room(some phone not work,use auto click)",
-    Callback = function()
-local Players = game:GetService("Players")
-local VirtualInputManager = game:GetService("VirtualInputManager")
-local RunService = game:GetService("RunService")
-
-local player = Players.LocalPlayer
-local gui = player:WaitForChild("PlayerGui"):WaitForChild("Choose2")
-local buttonBigBrain = gui:WaitForChild("Big Brain")
-local buttonChad = gui:WaitForChild("Chad")
-
--- Hàm gửi click tại vị trí (x, y)
-local function sendClick(x, y)
-    RunService.RenderStepped:Wait()
-    VirtualInputManager:SendMouseButtonEvent(x, y, 0, true, game, 0)
-    VirtualInputManager:SendMouseButtonEvent(x, y, 0, false, game, 0)
-end
-
--- Lấy vị trí click bên dưới nút
-local function getBottomOfButton(button)
-    local pos = button.AbsolutePosition
-    local size = button.AbsoluteSize
-    return pos.X + size.X / 2, pos.Y + size.Y
-end
-
--- Lấy vị trí cạnh dưới màn hình
-local function getBottomOfScreen(offsetX)
-    local screenSize = workspace.CurrentCamera.ViewportSize
-    local x = screenSize.X * offsetX
-    local y = screenSize.Y - 1
-    return x, y
-end
-
--- Hàm chính thực hiện 10 lần click tại mỗi điểm
-local function clickAllPoints()
-    -- Tọa độ dưới mỗi nút
-    local x1, y1 = getBottomOfButton(buttonBigBrain)
-    local x2, y2 = getBottomOfButton(buttonChad)
-
-    -- Tọa độ dưới màn hình (2 điểm, trái và phải)
-    local x3, y3 = getBottomOfScreen(0.3)  -- 30% ngang màn hình
-    local x4, y4 = getBottomOfScreen(0.7)  -- 70% ngang màn hình
-
-    for i = 1, 10 do
-        sendClick(x1, y1)  -- Dưới nút Big Brain
-        sendClick(x2, y2)  -- Dưới nút Chad
-        sendClick(x3, y3)  -- Cạnh dưới màn hình (trái)
-        sendClick(x4, y4)  -- Cạnh dưới màn hình (phải)
-    end
-end
-
--- Gọi hàm
-clickAllPoints()
 
     end,
 })
@@ -795,23 +751,6 @@ local Button = Tab4:Button({
     Title = "grabtools",
     Desc = "teleport grabtools",
     Callback = function()
-        print("Clicked!")
-    end,
-})
-
-local Toggle = Tab4:Toggle({
-    Title = "grabtools",
-    Desc = "auto grabtools",
-    Value = false,
-    Callback = function(Value)
-
-    end,
-})
-
-local Button = Tab4:Button({
-    Title = "instant proximity",
-    Desc = "set proximity to 0",
-    Callback = function()
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoidRootPart = character:WaitForChild("HumanoidRootPart") -- Phần trung tâm của nhân vật
@@ -830,12 +769,13 @@ for _, item in pairs(workspace:GetChildren()) do
     end
 end
 
+        print("Clicked!")
     end,
 })
 
 local Toggle = Tab4:Toggle({
-    Title = "auto proximity",
-    Desc = "auto collect proximity",
+    Title = "grabtools",
+    Desc = "auto grabtools",
     Value = false,
     Callback = function(Value)
 getgenv().autograb = Value
