@@ -495,7 +495,7 @@ local function c(btn)
     local center = btnPos + (btnSize / 2)
 
     -- Dịch điểm click xuống thấp hơn 2 đơn vị (pixel)
-    local adjustedY = center.Y + 10
+    local adjustedY = center.Y + 9
 
     -- Click chuột trái tại tọa độ điều chỉnh
     v:SendMouseButtonEvent(center.X, adjustedY, 0, true, game, 0)
