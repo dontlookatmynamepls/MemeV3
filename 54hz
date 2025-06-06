@@ -1,11 +1,3 @@
-local player = game.Players.LocalPlayer
-
-if player.Name == "RianSadBoi" or player.Name == "Mriscool12345" or player.Name == "hoajldh456" or player.Name == "KitsunPNG" or player.Name == "hoang_huy1k9" or player.Name == "thaylam5A1" then
-    print("buy script")
-else
-    player:Kick("not verify!,discord:nhm_roblox")
-end
-
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
 WindUI:SetNotificationLower(true)
@@ -434,8 +426,8 @@ end
 })
 
 local Toggle = Tab3:Toggle({
-    Title = "Auto Pray",
-    Desc = "Lv 1200(some phone not work)",
+    Title = "Auto Pray 1",
+    Desc = "Lv 1200",
     Value = false,
     Callback = function(Value)
 getgenv().AutoPray = Value -- Đổi thành false để tắt script
@@ -466,6 +458,157 @@ task.spawn(function()
             v:SendKeyEvent(false, Enum.KeyCode.G, false, game)
         end
         
+        if p then
+            c(p)
+            wait(0.3)
+        end
+    end
+end)
+    end,
+})
+
+local Toggle = Tab3:Toggle({
+    Title = "Auto Pray 2",
+    Desc = "Lv 1200(thank for sukuna from temu)",
+    Value = false,
+    Callback = function(Value)
+getgenv().AutoPray = Value -- Đổi thành false để tắt script
+
+local v = game:GetService("VirtualInputManager")
+local p = game:GetService("Players").LocalPlayer.PlayerGui.Pop.NotPray:FindFirstChild("Pray")
+local p2 = workspace.Map.Snow:FindFirstChild("Pray")
+local p3 = game.Players.LocalPlayer.Character.HumanoidRootPart
+local p4 = game:GetService("Players").LocalPlayer.PlayerGui.Pop:FindFirstChild("NotPray")
+
+-- Hàm click tại vị trí thấp hơn 2 đơn vị
+local function c(btn)
+    local btnPos = btn.AbsolutePosition
+    local btnSize = btn.AbsoluteSize 
+    local center = btnPos + (btnSize / 2)
+
+    -- Dịch điểm click xuống thấp hơn 2 đơn vị (pixel)
+    local adjustedY = center.Y + 10
+
+    -- Click chuột trái tại tọa độ điều chỉnh
+    v:SendMouseButtonEvent(center.X, adjustedY, 0, true, game, 0)
+    v:SendMouseButtonEvent(center.X, adjustedY, 0, false, game, 0)
+end
+
+task.spawn(function()
+    while wait() do
+        if not getgenv().AutoPray then return end -- Tắt script nếu AutoPray = false
+
+        -- Dịch chuyển nhân vật đến vị trí cầu nguyện nếu chưa đúng vị trí và GUI chưa hiện
+        if p2 and p3.CFrame ~= p2.CFrame and not p4.Visible then
+            p3.CFrame = p2.CFrame
+            wait(0.3)
+            v:SendKeyEvent(true, Enum.KeyCode.G, false, game)
+            wait(1.5)
+            v:SendKeyEvent(false, Enum.KeyCode.G, false, game)
+        end
+
+        -- Click nút Pray nếu tồn tại
+        if p then
+            c(p)
+            wait(0.3)
+        end
+    end
+end)
+    end,
+})
+
+local Toggle = Tab3:Toggle({
+    Title = "Auto Pray 3",
+    Desc = "Lv 1200",
+    Value = false,
+    Callback = function(Value)
+getgenv().AutoPray = Value -- Đổi thành false để tắt script
+
+local v = game:GetService("VirtualInputManager")
+local p = game:GetService("Players").LocalPlayer.PlayerGui.Pop.NotPray:FindFirstChild("Pray")
+local p2 = workspace.Map.Snow:FindFirstChild("Pray")
+local p3 = game.Players.LocalPlayer.Character.HumanoidRootPart
+local p4 = game:GetService("Players").LocalPlayer.PlayerGui.Pop:FindFirstChild("NotPray")
+
+-- Hàm click tại vị trí thấp hơn 2 đơn vị
+local function c(btn)
+    local btnPos = btn.AbsolutePosition
+    local btnSize = btn.AbsoluteSize 
+    local center = btnPos + (btnSize / 1)
+
+    -- Dịch điểm click xuống thấp hơn 2 đơn vị (pixel)
+    local adjustedY = center.Y + 20
+
+    -- Click chuột trái tại tọa độ điều chỉnh
+    v:SendMouseButtonEvent(center.X, adjustedY, 0, true, game, 0)
+    v:SendMouseButtonEvent(center.X, adjustedY, 0, false, game, 0)
+end
+
+task.spawn(function()
+    while wait() do
+        if not getgenv().AutoPray then return end -- Tắt script nếu AutoPray = false
+
+        -- Dịch chuyển nhân vật đến vị trí cầu nguyện nếu chưa đúng vị trí và GUI chưa hiện
+        if p2 and p3.CFrame ~= p2.CFrame and not p4.Visible then
+            p3.CFrame = p2.CFrame
+            wait(0.3)
+            v:SendKeyEvent(true, Enum.KeyCode.G, false, game)
+            wait(1.5)
+            v:SendKeyEvent(false, Enum.KeyCode.G, false, game)
+        end
+
+        -- Click nút Pray nếu tồn tại
+        if p then
+            c(p)
+            wait(0.3)
+        end
+    end
+end)
+
+    end,
+})
+
+local Toggle = Tab3:Toggle({
+    Title = "Auto Pray 4",
+    Desc = "Lv 1200",
+    Value = false,
+    Callback = function(Value)
+getgenv().AutoPray = Value -- Đổi thành false để tắt script
+
+local v = game:GetService("VirtualInputManager")
+local p = game:GetService("Players").LocalPlayer.PlayerGui.Pop.NotPray:FindFirstChild("Pray")
+local p2 = workspace.Map.Snow:FindFirstChild("Pray")
+local p3 = game.Players.LocalPlayer.Character.HumanoidRootPart
+local p4 = game:GetService("Players").LocalPlayer.PlayerGui.Pop:FindFirstChild("NotPray")
+
+-- Hàm click tại vị trí thấp hơn 2 đơn vị
+local function c(btn)
+    local btnPos = btn.AbsolutePosition
+    local btnSize = btn.AbsoluteSize 
+    local center = btnPos + (btnSize / 2)
+
+    -- Dịch điểm click xuống thấp hơn 2 đơn vị (pixel)
+    local adjustedY = center.Y + 20
+
+    -- Click chuột trái tại tọa độ điều chỉnh
+    v:SendMouseButtonEvent(center.X, adjustedY, 0, true, game, 0)
+    v:SendMouseButtonEvent(center.X, adjustedY, 0, false, game, 0)
+end
+
+task.spawn(function()
+    while wait() do
+        if not getgenv().AutoPray then return end -- Tắt script nếu AutoPray = false
+
+        -- Dịch chuyển nhân vật đến vị trí cầu nguyện nếu chưa đúng vị trí và GUI chưa hiện
+        if p2 and p3.CFrame ~= p2.CFrame and not p4.Visible then
+            p3.CFrame = p2.CFrame
+            wait(0.3)
+            v:SendKeyEvent(true, Enum.KeyCode.G, false, game)
+            wait(1.5)
+            v:SendKeyEvent(false, Enum.KeyCode.G, false, game)
+        end
+
+        -- Click nút Pray nếu tồn tại
         if p then
             c(p)
             wait(0.3)
