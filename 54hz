@@ -102,8 +102,8 @@ local Paragraph = Tab1:Paragraph({
 })
 
 local Paragraph = Tab1:Paragraph({
-    Title = "Flandre Hub Update V5.0",
-    Desc = "+ Added 4 Version Of Auto Pray",
+    Title = "Flandre Hub Update V5.1",
+    Desc = "+ Fixed Auto Fishing When Toggle Is Off",
     Image = "check",
     Color= "Green",
 })
