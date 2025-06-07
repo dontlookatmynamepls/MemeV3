@@ -495,7 +495,7 @@ local function c(btn)
     local center = btnPos + (btnSize / 2)
 
     -- Dịch điểm click xuống thấp hơn 2 đơn vị (pixel)
-    local adjustedY = center.Y + 9
+    local adjustedY = center.Y + 10
 
     -- Click chuột trái tại tọa độ điều chỉnh
     v:SendMouseButtonEvent(center.X, adjustedY, 0, true, game, 0)
@@ -751,35 +751,27 @@ getgenv().autoEquip = Value
     end,
 })
 
-local function startFishing(fishType, stateVar)
-    getgenv()[stateVar] = not getgenv()[stateVar]
-
-    if getgenv()[stateVar] then
-        spawn(function()
-            while getgenv()[stateVar] do
-                local player = game.Players.LocalPlayer
-                local fishingEvent = player and workspace:FindFirstChild(player.Name) 
-                    and workspace[player.Name]:FindFirstChild("Fishing") 
-                    and workspace[player.Name].Fishing:FindFirstChild(fishType) 
-                    and workspace[player.Name].Fishing[fishType]:FindFirstChild("RemoteEvent")
-
-                if fishingEvent then
-                    fishingEvent:FireServer("Fishing3")
-                else
-                    warn("Không tìm thấy RemoteEvent:", fishType)
-                end
-                wait(1) -- Để tránh spam quá nhanh
-            end
-        end)
-    end
-end
-
 local Toggle = Tab35:Toggle({
     Title = "Fishing Desert",
     Desc = "Auto Fishing ",
     Value = false,
     Callback = function(Value)
-startFishing("Desert", "fishingEnabled1")
+getgenv().running = Value
+
+spawn(function()
+    while getgenv().running do
+        local player = game:GetService("Players").LocalPlayer
+        local fishingFolder = workspace:FindFirstChild(player.Name)
+        if fishingFolder and fishingFolder:FindFirstChild("Fishing") then
+            local desert = fishingFolder.Fishing:FindFirstChild("Desert")
+            if desert and desert:FindFirstChild("RemoteEvent") then
+                desert.RemoteEvent:FireServer("Fishing3")
+            end
+        end
+        task.wait()
+    end
+end)
+
     end,
 })
 
@@ -788,7 +780,22 @@ local Toggle = Tab35:Toggle({
     Desc = "Auto Fishing ",
     Value = false,
     Callback = function(Value)
-startFishing("Lava", "fishingEnabled2")
+getgenv().lavaFishingRunning = Value
+
+spawn(function()
+    while getgenv().lavaFishingRunning do
+        local player = game:GetService("Players").LocalPlayer
+        local fishingFolder = workspace:FindFirstChild(player.Name)
+        if fishingFolder and fishingFolder:FindFirstChild("Fishing") then
+            local lava = fishingFolder.Fishing:FindFirstChild("Lava")
+            if lava and lava:FindFirstChild("RemoteEvent") then
+                lava.RemoteEvent:FireServer("Fishing3")
+            end
+        end
+        task.wait()
+    end
+end)
+
     end,
 })
 
@@ -797,7 +804,22 @@ local Toggle = Tab35:Toggle({
     Desc = "Auto Fishing ",
     Value = false,
     Callback = function(Value)
-startFishing("Snow", "fishingEnabled3")
+getgenv().snowFishingRunning = Value
+
+spawn(function()
+    while getgenv().snowFishingRunning do
+        local player = game:GetService("Players").LocalPlayer
+        local fishingFolder = workspace:FindFirstChild(player.Name)
+        if fishingFolder and fishingFolder:FindFirstChild("Fishing") then
+            local snow = fishingFolder.Fishing:FindFirstChild("Snow")
+            if snow and snow:FindFirstChild("RemoteEvent") then
+                snow.RemoteEvent:FireServer("Fishing3")
+            end
+        end
+        task.wait()
+    end
+end)
+
     end,
 })
 
