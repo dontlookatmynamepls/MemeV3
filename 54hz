@@ -103,7 +103,7 @@ local Paragraph = Tab1:Paragraph({
 
 local Paragraph = Tab1:Paragraph({
     Title = "Flandre Hub Update V5.1",
-    Desc = "+ Fixed Auto Fishing When Toggle Is Off",
+    Desc = "+ Added Auto Pray V4",
     Image = "check",
     Color= "Green",
 })
@@ -580,6 +580,70 @@ task.spawn(function()
             wait(0.3)
         end
     end
+end)
+    end,
+})
+
+local Button = Tab3:Button({
+    Title = "Auto Pray V4❗️",
+    Desc = "Inf",
+    Callback = function()
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+local Window = Library:NewWindow("Flandre Hub")
+
+local Tab = Window:NewSection("Main")
+
+Tab:CreateButton("Script Make By 54hz", function()
+
+print("hello")
+
+end)
+
+Tab:CreateToggle("Toggle", function(value)
+
+getgenv().AutoPray = value -- Đặt thành false để dừng và ẩn GUI
+
+local v = game:GetService("VirtualInputManager")
+local player = game:GetService("Players").LocalPlayer
+local gui = player:WaitForChild("PlayerGui")
+local notPrayGui = gui:WaitForChild("Pop"):WaitForChild("NotPray")
+local prayBtn = notPrayGui:WaitForChild("Pray")
+
+local function isValid()
+    return notPrayGui.Visible and prayBtn.Visible
+        and prayBtn.Size == UDim2.new(1, 0, 1, 0)
+        and prayBtn.Position == UDim2.new(0, 0, 0, 0)
+end
+
+local function clickPray()
+    local pos = prayBtn.AbsolutePosition + (prayBtn.AbsoluteSize / 2)
+    v:SendMouseButtonEvent(pos.X, pos.Y, 0, true, game, 0)
+    v:SendMouseButtonEvent(pos.X, pos.Y, 0, false, game, 0)
+end
+
+task.spawn(function()
+    while task.wait(0.2) do
+        if getgenv().AutoPray then
+            -- Hiển thị GUI và đảm bảo thuộc tính đúng
+            notPrayGui.Visible = true
+            prayBtn.Visible = true
+            prayBtn.Size = UDim2.new(1, 0, 1, 0)
+            prayBtn.Position = UDim2.new(0, 0, 0, 0)
+
+            if isValid() then
+                clickPray()
+            end
+        else
+            -- Ẩn GUI và dừng tương tác
+            notPrayGui.Visible = false
+            prayBtn.Visible = false
+        end
+    end
+end)
+
+print(value)
+
 end)
     end,
 })
