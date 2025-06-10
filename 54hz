@@ -1,7 +1,7 @@
 
 local player = game.Players.LocalPlayer
 
-if player.Name == "RianSadBoi" or player.Name == "chad761992" or player.Name == "rypzRXcHVG" or player.Name == "Mriscool12345" or player.Name == "hoajldh456" or player.Name == "KitsunPNG" or player.Name == "hoang_huy1k9" or player.Name == "thaylam5A1" then
+if player.Name == "RianSadBoi" or player.Name == "TheEpicYoutuber15" or player.Name == "chad761992" or player.Name == "rypzRXcHVG" or player.Name == "Mriscool12345" or player.Name == "hoajldh456" or player.Name == "KitsunPNG" or player.Name == "hoang_huy1k9" or player.Name == "thaylam5A1" then
     print("buy script")
 else
     player:Kick("not verify!,discord:nhm_roblox")
