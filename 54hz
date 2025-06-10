@@ -601,7 +601,7 @@ print("hello")
 
 end)
 
-Tab:CreateToggle("Toggle", function(value)
+Tab:CreateToggle("Auto Pray", function(value)
 
 -- Bật/tắt AutoPray bằng cách chỉnh biến này
 getgenv().AutoPray = value
@@ -670,9 +670,9 @@ end
 
 -- Luồng tự động Pray
 task.spawn(function()
-    while task.wait(0.5) do
+    while task.wait(0) do
         if getgenv().AutoPray and isValid() then
-            task.wait(0.05) -- đợi frame ổn định
+            task.wait(0) -- đợi frame ổn định
             if isValid() then
                 clickPray()
             end
