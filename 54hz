@@ -1,3 +1,4 @@
+
 local player = game.Players.LocalPlayer
 
 if player.Name == "RianSadBoi" or player.Name == "chad761992" or player.Name == "rypzRXcHVG" or player.Name == "Mriscool12345" or player.Name == "hoajldh456" or player.Name == "KitsunPNG" or player.Name == "hoang_huy1k9" or player.Name == "thaylam5A1" then
@@ -602,42 +603,79 @@ end)
 
 Tab:CreateToggle("Toggle", function(value)
 
-getgenv().AutoPray = value -- Đặt thành false để dừng và ẩn GUI
+-- Bật/tắt AutoPray bằng cách chỉnh biến này
+getgenv().AutoPray = value
 
+-- Lấy các dịch vụ và phần tử UI
 local v = game:GetService("VirtualInputManager")
 local player = game:GetService("Players").LocalPlayer
 local gui = player:WaitForChild("PlayerGui")
 local notPrayGui = gui:WaitForChild("Pop"):WaitForChild("NotPray")
 local prayBtn = notPrayGui:WaitForChild("Pray")
 
-local function isValid()
-    return notPrayGui.Visible and prayBtn.Visible
-        and prayBtn.Size == UDim2.new(1, 0, 1, 0)
-        and prayBtn.Position == UDim2.new(0, 0, 0, 0)
+-- Giá trị cố định
+local desiredSize = UDim2.new(1, 0, 1, 0)
+local desiredPosition = UDim2.new(0, 0, 0, 0)
+
+-- Gỡ các layout phá vị trí
+for _, child in ipairs(prayBtn:GetChildren()) do
+    if child:IsA("UIListLayout") or child:IsA("UIGridLayout") or child:IsA("UIScale") then
+        child:Destroy()
+    end
 end
 
+-- Đóng băng vị trí và kích thước bằng PropertyChangedSignal
+prayBtn:GetPropertyChangedSignal("Size"):Connect(function()
+    if prayBtn.Size ~= desiredSize then
+        prayBtn.Size = desiredSize
+    end
+end)
+
+prayBtn:GetPropertyChangedSignal("Position"):Connect(function()
+    if prayBtn.Position ~= desiredPosition then
+        prayBtn.Position = desiredPosition
+    end
+end)
+
+-- Đảm bảo nút không bị thay đổi bất ngờ (thêm một lớp bảo vệ)
+task.spawn(function()
+    while true do
+        if getgenv().AutoPray then
+            -- Giữ đúng kích thước và vị trí
+            notPrayGui.Visible = true
+            prayBtn.Visible = true
+            prayBtn.Size = desiredSize
+            prayBtn.Position = desiredPosition
+        else
+            notPrayGui.Visible = false
+            prayBtn.Visible = false
+        end
+        task.wait()
+    end
+end)
+
+-- Kiểm tra tính hợp lệ của nút Pray
+local function isValid()
+    return notPrayGui.Visible and prayBtn.Visible
+        and prayBtn.Size == desiredSize
+        and prayBtn.Position == desiredPosition
+end
+
+-- Click vào giữa nút Pray
 local function clickPray()
     local pos = prayBtn.AbsolutePosition + (prayBtn.AbsoluteSize / 2)
     v:SendMouseButtonEvent(pos.X, pos.Y, 0, true, game, 0)
     v:SendMouseButtonEvent(pos.X, pos.Y, 0, false, game, 0)
 end
 
+-- Luồng tự động Pray
 task.spawn(function()
-    while task.wait(0.2) do
-        if getgenv().AutoPray then
-            -- Hiển thị GUI và đảm bảo thuộc tính đúng
-            notPrayGui.Visible = true
-            prayBtn.Visible = true
-            prayBtn.Size = UDim2.new(1, 0, 1, 0)
-            prayBtn.Position = UDim2.new(0, 0, 0, 0)
-
+    while task.wait(0.5) do
+        if getgenv().AutoPray and isValid() then
+            task.wait(0.05) -- đợi frame ổn định
             if isValid() then
                 clickPray()
             end
-        else
-            -- Ẩn GUI và dừng tương tác
-            notPrayGui.Visible = false
-            prayBtn.Visible = false
         end
     end
 end)
