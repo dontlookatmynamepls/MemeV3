@@ -988,7 +988,7 @@ local character = player.Character or player.CharacterAdded:Wait()
 local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
 
 -- Phạm vi tìm prompt (có thể chỉnh)
-local ACTIVATION_RANGE = 50
+local ACTIVATION_RANGE = 10
 
 -- Hàm kích hoạt prompt gần
 local function autoActivatePrompts()
@@ -1011,7 +1011,7 @@ task.spawn(function()
 		if getgenv().AutoPrompt then
 			autoActivatePrompts()
 		end
-		task.wait(0)
+		task.wait(0.5)
 	end
 end)
 
