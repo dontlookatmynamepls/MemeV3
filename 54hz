@@ -974,6 +974,50 @@ getgenv().FlaggingESP = Value
     end,
 })
 
+local Toggle = Tab4:Toggle({
+    Title = "auto pp",
+    Desc = "auto proximity",
+    Value = false,
+    Callback = function(Value)
+-- Thiết lập biến toàn cục để bật / tắt script
+getgenv().AutoPrompt = Value
+
+-- Lấy người chơi và nhân vật
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+
+-- Phạm vi tìm prompt (có thể chỉnh)
+local ACTIVATION_RANGE = 50
+
+-- Hàm kích hoạt prompt gần
+local function autoActivatePrompts()
+	for _, prompt in ipairs(workspace:GetDescendants()) do
+		if prompt:IsA("ProximityPrompt") then
+			local promptPart = prompt.Parent
+			if promptPart and promptPart:IsA("BasePart") and prompt.Enabled then
+				local distance = (promptPart.Position - humanoidRootPart.Position).Magnitude
+				if distance <= ACTIVATION_RANGE then
+					fireproximityprompt(prompt)
+				end
+			end
+		end
+	end
+end
+
+-- Vòng lặp chính
+task.spawn(function()
+	while true do
+		if getgenv().AutoPrompt then
+			autoActivatePrompts()
+		end
+		task.wait(0)
+	end
+end)
+
+    end,
+})
+
 local Input = Tab5:Input({
     Title = "Fake Beli",
     Desc = "",
