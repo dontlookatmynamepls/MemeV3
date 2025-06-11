@@ -1,7 +1,6 @@
-
 local player = game.Players.LocalPlayer
 
-if player.Name == "RianSadBoi" or player.Name == "TheEpicYoutuber15" or player.Name == "chad761992" or player.Name == "rypzRXcHVG" or player.Name == "Mriscool12345" or player.Name == "hoajldh456" or player.Name == "KitsunPNG" or player.Name == "hoang_huy1k9" or player.Name == "thaylam5A1" then
+if player.Name == "RianSadBoi" or player.Name == "chad761992" or player.Name == "rypzRXcHVG" or player.Name == "Mriscool12345" or player.Name == "hoajldh456" or player.Name == "KitsunPNG" or player.Name == "hoang_huy1k9" or player.Name == "thaylam5A1" then
     print("buy script")
 else
     player:Kick("not verify!,discord:nhm_roblox")
@@ -434,157 +433,6 @@ end
     end,
 })
 
-local Toggle = Tab3:Toggle({
-    Title = "Auto Pray 1",
-    Desc = "Lv 1200,this is for phone or nokia",
-    Value = false,
-    Callback = function(Value)
-getgenv().AutoPray = Value -- Đổi thành false để tắt script
-
-local v = game:GetService("VirtualInputManager")
-local p = game:GetService("Players").LocalPlayer.PlayerGui.Pop.NotPray:FindFirstChild("Pray")
-local p2 = workspace.Map.Snow:FindFirstChild("Pray")
-local p3 = game.Players.LocalPlayer.Character.HumanoidRootPart
-local p4 = game:GetService("Players").LocalPlayer.PlayerGui.Pop:FindFirstChild("NotPray")
-
--- Hàm click tại vị trí thấp hơn 2 đơn vị
-local function c(btn)
-    local btnPos = btn.AbsolutePosition
-    local btnSize = btn.AbsoluteSize 
-    local center = btnPos + (btnSize / 1)
-
-    -- Dịch điểm click xuống thấp hơn 2 đơn vị (pixel)
-    local adjustedY = center.Y + 20
-
-    -- Click chuột trái tại tọa độ điều chỉnh
-    v:SendMouseButtonEvent(center.X, adjustedY, 0, true, game, 0)
-    v:SendMouseButtonEvent(center.X, adjustedY, 0, false, game, 0)
-end
-
-task.spawn(function()
-    while wait() do
-        if not getgenv().AutoPray then return end -- Tắt script nếu AutoPray = false
-
-        -- Dịch chuyển nhân vật đến vị trí cầu nguyện nếu chưa đúng vị trí và GUI chưa hiện
-        if p2 and p3.CFrame ~= p2.CFrame and not p4.Visible then
-            p3.CFrame = p2.CFrame
-            wait(0.3)
-            v:SendKeyEvent(true, Enum.KeyCode.G, false, game)
-            wait(1.5)
-            v:SendKeyEvent(false, Enum.KeyCode.G, false, game)
-        end
-
-        -- Click nút Pray nếu tồn tại
-        if p then
-            c(p)
-            wait(0.3)
-        end
-    end
-end)
-
-    end,
-})
-
-local Toggle = Tab3:Toggle({
-    Title = "Auto Pray 2",
-    Desc = "Lv 1200,for ipad or idk XD",
-    Value = false,
-    Callback = function(Value)
-getgenv().AutoPray = Value -- Đổi thành false để tắt script
-
-local v = game:GetService("VirtualInputManager")
-local p = game:GetService("Players").LocalPlayer.PlayerGui.Pop.NotPray:FindFirstChild("Pray")
-local p2 = workspace.Map.Snow:FindFirstChild("Pray")
-local p3 = game.Players.LocalPlayer.Character.HumanoidRootPart
-local p4 = game:GetService("Players").LocalPlayer.PlayerGui.Pop:FindFirstChild("NotPray")
-
--- Hàm click tại vị trí thấp hơn 2 đơn vị
-local function c(btn)
-    local btnPos = btn.AbsolutePosition
-    local btnSize = btn.AbsoluteSize 
-    local center = btnPos + (btnSize / 2)
-
-    -- Dịch điểm click xuống thấp hơn 2 đơn vị (pixel)
-    local adjustedY = center.Y + 10
-
-    -- Click chuột trái tại tọa độ điều chỉnh
-    v:SendMouseButtonEvent(center.X, adjustedY, 0, true, game, 0)
-    v:SendMouseButtonEvent(center.X, adjustedY, 0, false, game, 0)
-end
-
-task.spawn(function()
-    while wait() do
-        if not getgenv().AutoPray then return end -- Tắt script nếu AutoPray = false
-
-        -- Dịch chuyển nhân vật đến vị trí cầu nguyện nếu chưa đúng vị trí và GUI chưa hiện
-        if p2 and p3.CFrame ~= p2.CFrame and not p4.Visible then
-            p3.CFrame = p2.CFrame
-            wait(0.3)
-            v:SendKeyEvent(true, Enum.KeyCode.G, false, game)
-            wait(1.5)
-            v:SendKeyEvent(false, Enum.KeyCode.G, false, game)
-        end
-
-        -- Click nút Pray nếu tồn tại
-        if p then
-            c(p)
-            wait(0.3)
-        end
-    end
-end)
-    end,
-})
-
-local Toggle = Tab3:Toggle({
-    Title = "Auto Pray 3",
-    Desc = "Lv 1200,for pc or smth",
-    Value = false,
-    Callback = function(Value)
-getgenv().AutoPray = Value -- Đổi thành false để tắt script
-
-local v = game:GetService("VirtualInputManager")
-local p = game:GetService("Players").LocalPlayer.PlayerGui.Pop.NotPray:FindFirstChild("Pray")
-local p2 = workspace.Map.Snow:FindFirstChild("Pray")
-local p3 = game.Players.LocalPlayer.Character.HumanoidRootPart
-local p4 = game:GetService("Players").LocalPlayer.PlayerGui.Pop:FindFirstChild("NotPray")
-
--- Hàm click tại vị trí thấp hơn 2 đơn vị
-local function c(btn)
-    local btnPos = btn.AbsolutePosition
-    local btnSize = btn.AbsoluteSize 
-    local center = btnPos + (btnSize / 2)
-
-    -- Dịch điểm click xuống thấp hơn 2 đơn vị (pixel)
-    local adjustedY = center.Y + 20
-
-    -- Click chuột trái tại tọa độ điều chỉnh
-    v:SendMouseButtonEvent(center.X, adjustedY, 0, true, game, 0)
-    v:SendMouseButtonEvent(center.X, adjustedY, 0, false, game, 0)
-end
-
-task.spawn(function()
-    while wait() do
-        if not getgenv().AutoPray then return end -- Tắt script nếu AutoPray = false
-
-        -- Dịch chuyển nhân vật đến vị trí cầu nguyện nếu chưa đúng vị trí và GUI chưa hiện
-        if p2 and p3.CFrame ~= p2.CFrame and not p4.Visible then
-            p3.CFrame = p2.CFrame
-            wait(0.3)
-            v:SendKeyEvent(true, Enum.KeyCode.G, false, game)
-            wait(1.5)
-            v:SendKeyEvent(false, Enum.KeyCode.G, false, game)
-        end
-
-        -- Click nút Pray nếu tồn tại
-        if p then
-            c(p)
-            wait(0.3)
-        end
-    end
-end)
-    end,
-})
-
 local Button = Tab3:Button({
     Title = "Auto Pray V4❗️",
     Desc = "Inf",
@@ -601,9 +449,8 @@ print("hello")
 
 end)
 
-Tab:CreateToggle("Auto Pray", function(value)
+Tab:CreateToggle("Toggle", function(value)
 
--- Bật/tắt AutoPray bằng cách chỉnh biến này
 getgenv().AutoPray = value
 
 -- Lấy các dịch vụ và phần tử UI
@@ -617,14 +464,45 @@ local prayBtn = notPrayGui:WaitForChild("Pray")
 local desiredSize = UDim2.new(1, 0, 1, 0)
 local desiredPosition = UDim2.new(0, 0, 0, 0)
 
+local desiredSize2 = UDim2.new(0.3, 0, 0.5, 0)
+local desiredPosition2 = UDim2.new(0.35, 0, 0.3, 0)
+
 -- Gỡ các layout phá vị trí
+for _, child in ipairs(notPrayGui:GetChildren()) do
+    if child:IsA("UIListLayout") or child:IsA("UIGridLayout") or child:IsA("UIScale") then
+        child:Destroy()
+    end
+end
+
+-- Thiết lập giá trị ban đầu
+notPrayGui.Size = desiredSize2
+notPrayGui.Position = desiredPosition2
+
+-- Đóng băng vị trí và kích thước của NotPray
+notPrayGui:GetPropertyChangedSignal("Size"):Connect(function()
+    if notPrayGui.Size ~= desiredSize2 then
+        notPrayGui.Size = desiredSize2
+    end
+end)
+
+notPrayGui:GetPropertyChangedSignal("Position"):Connect(function()
+    if notPrayGui.Position ~= desiredPosition2 then
+        notPrayGui.Position = desiredPosition2
+    end
+end)
+
+-- Gỡ layout phá Pray button
 for _, child in ipairs(prayBtn:GetChildren()) do
     if child:IsA("UIListLayout") or child:IsA("UIGridLayout") or child:IsA("UIScale") then
         child:Destroy()
     end
 end
 
--- Đóng băng vị trí và kích thước bằng PropertyChangedSignal
+-- Thiết lập giá trị ban đầu
+prayBtn.Size = desiredSize
+prayBtn.Position = desiredPosition
+
+-- Đóng băng vị trí và kích thước của Pray
 prayBtn:GetPropertyChangedSignal("Size"):Connect(function()
     if prayBtn.Size ~= desiredSize then
         prayBtn.Size = desiredSize
@@ -637,12 +515,15 @@ prayBtn:GetPropertyChangedSignal("Position"):Connect(function()
     end
 end)
 
--- Đảm bảo nút không bị thay đổi bất ngờ (thêm một lớp bảo vệ)
+-- Lớp bảo vệ liên tục giữ đúng vị trí và hiển thị
 task.spawn(function()
     while true do
         if getgenv().AutoPray then
             -- Giữ đúng kích thước và vị trí
             notPrayGui.Visible = true
+            notPrayGui.Size = desiredSize2
+            notPrayGui.Position = desiredPosition2
+
             prayBtn.Visible = true
             prayBtn.Size = desiredSize
             prayBtn.Position = desiredPosition
@@ -650,7 +531,7 @@ task.spawn(function()
             notPrayGui.Visible = false
             prayBtn.Visible = false
         end
-        task.wait()
+        task.wait(0.1)
     end
 end)
 
@@ -672,13 +553,11 @@ end
 task.spawn(function()
     while task.wait(0) do
         if getgenv().AutoPray and isValid() then
-            task.wait(0) -- đợi frame ổn định
-            if isValid() then
-                clickPray()
-            end
+            clickPray()
         end
     end
 end)
+
 
 print(value)
 
@@ -1256,7 +1135,7 @@ local Paragraph = Tab7:Paragraph({
     Color= "Blue",
 })
 
--- Đo FPS và tạo UI Frame
+-- Đo FPS và tạo UI Frame nhỏ gọn
 local player = game.Players.LocalPlayer
 
 -- Tạo ScreenGui
@@ -1265,15 +1144,15 @@ gui.Name = "FPSGui"
 gui.ResetOnSpawn = false
 gui.Parent = player:WaitForChild("PlayerGui")
 
--- Tạo Frame
+-- Tạo Frame nhỏ hơn
 local frame = Instance.new("Frame")
-frame.Size = UDim2.new(0, 150, 0, 60)
-frame.Position = UDim2.new(1, -10, 0, -20)
+frame.Size = UDim2.new(0, 100, 0, 35)
+frame.Position = UDim2.new(1, -10, 0, -10)
 frame.AnchorPoint = Vector2.new(1, 0)
 frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 frame.BackgroundTransparency = 0.3
-frame.Active = true -- Cho phép nhận input
-frame.Draggable = true -- Cho phép kéo
+frame.Active = true
+frame.Draggable = true
 frame.Parent = gui
 
 -- Bo góc
@@ -1281,18 +1160,18 @@ local corner = Instance.new("UICorner")
 corner.CornerRadius = UDim.new(0.5, 0)
 corner.Parent = frame
 
--- Ảnh icon
+-- Ảnh icon nhỏ lại
 local imageLabel = Instance.new("ImageLabel")
-imageLabel.Size = UDim2.new(0, 40, 0, 40)
-imageLabel.Position = UDim2.new(0, 10, 0, 10)
+imageLabel.Size = UDim2.new(0, 24, 0, 24)
+imageLabel.Position = UDim2.new(0, 5, 0, 5)
 imageLabel.Image = "rbxassetid://116721573962136"
 imageLabel.BackgroundTransparency = 1
 imageLabel.Parent = frame
 
--- Nhãn hiển thị FPS
+-- Nhãn hiển thị FPS nhỏ
 local fpsLabel = Instance.new("TextLabel")
-fpsLabel.Size = UDim2.new(0, 80, 0, 40)
-fpsLabel.Position = UDim2.new(0, 55, 0, 10)
+fpsLabel.Size = UDim2.new(0, 65, 0, 24)
+fpsLabel.Position = UDim2.new(0, 32, 0, 5)
 fpsLabel.BackgroundTransparency = 1
 fpsLabel.TextScaled = true
 fpsLabel.Font = Enum.Font.SourceSansBold
@@ -1300,11 +1179,11 @@ fpsLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
 fpsLabel.Text = "FPS: 0"
 fpsLabel.Parent = frame
 
--- Tạo nút click trùng với ảnh
+-- Nút click trùng với ảnh (nhỏ lại theo icon)
 local isWindowOpen = false
 local clickArea = Instance.new("TextButton")
-clickArea.Size = UDim2.new(0, 40, 0, 40) -- Trùng kích thước ảnh
-clickArea.Position = UDim2.new(0, 10, 0, 10) -- Trùng vị trí ảnh
+clickArea.Size = UDim2.new(0, 24, 0, 24)
+clickArea.Position = UDim2.new(0, 5, 0, 5)
 clickArea.BackgroundTransparency = 1
 clickArea.Text = ""
 clickArea.Parent = frame
@@ -1313,11 +1192,11 @@ clickArea.MouseButton1Click:Connect(function()
     isWindowOpen = not isWindowOpen
     if isWindowOpen then
         if Window and Window.Open then
-            Window:Open()  -- Mở WindUI
+            Window:Open()
         end
     else
         if Window and Window.Close then
-            Window:Close()  -- Đóng WindUI
+            Window:Close()
         end
     end
 end)
@@ -1339,11 +1218,11 @@ RunService.RenderStepped:Connect(function()
         fpsLabel.Text = "FPS: " .. tostring(fps)
 
         if fps >= 40 then
-            fpsLabel.TextColor3 = Color3.fromRGB(0, 255, 0) -- xanh lá
+            fpsLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
         elseif fps >= 20 then
-            fpsLabel.TextColor3 = Color3.fromRGB(255, 255, 0) -- vàng
+            fpsLabel.TextColor3 = Color3.fromRGB(255, 255, 0)
         else
-            fpsLabel.TextColor3 = Color3.fromRGB(255, 0, 0) -- đỏ
+            fpsLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
         end
     end
 end)
