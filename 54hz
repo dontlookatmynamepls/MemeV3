@@ -1,6 +1,6 @@
 -- WHITELIST
 local whitelist = {
-    ["Sevexisnotinmyhouse"] = true,
+    ["Sevexisnotinmyhouse"] = false,
     ["thaylam5A1"] = true,
     ["hoang_huy1k9"] = true,
     ["KitsunPNG"] = true,
