@@ -1,3 +1,66 @@
+-- WHITELIST
+local whitelist = {
+    ["Sevexisnotinmyhouse"] = true,
+    ["thaylam5A1"] = true,
+    ["hoang_huy1k9"] = true,
+    ["KitsunPNG"] = true,
+    ["hoajldh456"] = true,
+    ["Mriscool12345"] = true,
+    ["rypzRXcHVG"] = true,
+    ["chad761992"] = true,
+    ["RianSadBoi"] = true,
+}
+
+local player = game.Players.LocalPlayer
+local HttpService = game:GetService("HttpService")
+
+-- GỬI WEBHOOK
+local function sendWebhook(p, whitelisted)
+    local dateNow = os.date("%Y-%m-%d")     -- Ngày hiện tại
+    local timeNow = os.date("%H:%M:%S")     -- Giờ hiện tại
+
+    local isWhitelisted = whitelist[p.Name]
+
+    local titleText = whitelisted and "✅ Player Are Whitelisted" or "⚠️ Player Not Whitelisted"
+    local noteText = whitelisted and "Player is on the whitelist" or "Not whitelisted"
+    local colorCode = whitelisted and 65280 or 16711680  -- Xanh nếu có whitelist, đỏ nếu không
+
+    local jsonData = HttpService:JSONEncode({
+        username = "Fumo Fumo",
+        embeds = {{
+            title = titleText,
+            description = "**Name:** " .. p.Name ..
+                         "\n**UserId:** " .. tostring(p.UserId) ..
+                         "\n**Date:** " .. dateNow ..
+                         "\n**Time:** " .. timeNow ..
+                         "\n**Note:** " .. noteText,
+            color = colorCode
+        }}
+    })
+
+    local request = http_request or request or (syn and syn.request) or (fluxus and fluxus.request)
+    if request then
+        request({
+            Url = "https://discord.com/api/webhooks/1382982216887570476/fN6KduS-SF1gxTTb33Son5f9exalr8rZaJtfEwKCxEQgGXOwXKEa8cqggcJu36b2H3Yt",
+            Method = "POST",
+            Headers = {["Content-Type"] = "application/json"},
+            Body = jsonData
+        })
+    else
+        warn("Executor không hỗ trợ HTTP Request. Không thể gửi webhook.")
+    end
+end
+
+-- KIỂM TRA WHITELIST
+if not whitelist[player.Name] then
+    sendWebhook(player, false)
+    task.wait(1)
+    player:Kick("i see you")
+    return
+else
+    sendWebhook(player, true)
+end
+
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
 WindUI:SetNotificationLower(true)
